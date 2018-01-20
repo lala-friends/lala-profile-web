@@ -1,0 +1,43 @@
+{
+    "people": [
+        {
+            "id": 1,
+            "name": "tiffany",
+            "email": "yoonyoungkim89@gmail.com",
+            "introduce": "fontend developer",
+            "interests": ["tv시청", "블로거", "다육이", "요리"],
+            "projects": [0, 1, 2]
+        },
+        {
+            "id": 2,
+            "name": "ryon",
+            "email": "whuk@gmail.com",
+            "introduce": "backend developer",
+            "interests": ["건담", "파이널판타지", "클래시오브클랜", "tv시청"],
+            "projects": [3, 4, 5]
+        }
+    ],
+    "projects": [
+        {
+            "id": 0,
+            "name": "lala-clipping",
+            "description": "clipboard를 ",
+            "techs": ["android"],
+            "developers": [{
+                "id": 1,
+                "name": "tiffany",
+                "thumbnail": "www.naver.com"
+            }, {
+                "id": 1,
+                "name": "tiffany",
+                "thumbnail": "www.naver.com"
+            }]
+        },
+        {
+            "id": 1,
+            "name": "lala-landing",
+            "description": "lala friends의 landing page",
+            "techs": ["react", "go"]
+        }
+    ]
+}
