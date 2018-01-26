@@ -1,34 +1,64 @@
 import React, {Component} from 'react';
 import './Person.css';
 
-class Person extends Component {
+class Person extends Component { 
+    constructor(props) {
+        super(props);
+        this.state = {
+            isShow: false
+        };
+    }
+
+    handleClick = (e) => {
+        this.setState({
+            isShow: !this.state.isShow
+        });
+        console.log(this.state.isShow);
+    }
     render() {
         return (
             <div className="person card">
+                <div className="background" style={{backgroundColor: this.props.color}}></div>
+                <div className="thumbnail-background"></div>
                 <img className="thumbnail" src="https://0.soompi.io/wp-content/uploads/2017/10/22073014/IU-1.jpg" />
                 <div className="card-body">
                     <div className="text-align-center">
-                        <div>Tiffany</div>
-                        <div>yoonyoungkim89@gmail.com</div>
-                    </div>
-                    <hr/>
-                    <div>
-                        하고 싶은 말 우헤헤 길어지면 어떻게 되는지 보기 위해서 길게 쓴다구
+                        <div className="name">{this.props.name}</div>
+                        <div className="email">{this.props.email}</div>
+                        <div className="comment">{this.props.comment}</div>
                     </div>
                     <hr/>
                     <div className="flexbox">
-                        <div>#다육이</div>
-                        <div>#펌프</div>
-                        <div>#개발</div>
-                        <div>#요리하하</div>
-                        <div>#사업</div>
-                        <div>#다육식물</div>
-                        <div>#펌프</div>
-                        <div>#개발</div>
-                        <div>#요리</div>
-                        <div>#사업</div>
+                        <a className="social-button border-right" href={this.props.blog}>
+                            <i className="mdi mdi-blogger"></i>
+                            <div>blog</div>
+                        </a>
+                        <a className="social-button border-right" href={this.props.github}>
+                            <i className="mdi mdi-github-face"></i>
+                            <div>github</div>
+                        </a>
+                        <a className="social-button"  href={this.props.facebook}>
+                            <i className="mdi mdi-facebook"></i>
+                            <div>facebook</div>
+                        </a>
                     </div>
-                    <button className="btn btn-light project-button" type="button">Projects</button>
+                </div>
+                <div className="project-button flexbox" onClick={this.handleClick.bind(this)}>
+                    <span>Projects</span>
+                </div>
+                <div className={`${!this.state.isShow && 'inactive'}`}>
+                    {
+                        this.props.projects.map((project, i)=>{
+                            return (
+                                <a href="#" className="project-item" key={i}>
+                                    <img src={project.thumbnail} />
+                                    <div>
+                                        {project.name}
+                                    </div>
+                                </a>
+                            )
+                        })
+                    }
                 </div>
             </div>
         )

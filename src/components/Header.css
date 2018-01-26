@@ -1,0 +1,41 @@
+.header {
+  margin-top: 1em;
+  margin-bottom: 3em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .logo {
+  padding-top: 12px;
+  padding-bottom: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000;
+  text-decoration: none;
+}
+
+.header .menus {
+  display: flex;
+}
+
+.header .menu {
+  color: #868e96;
+  font-weight: 700;
+  padding: 10px 25px 7px 25px;
+  margin-left: 0.5em;
+  border-radius: 22px;
+  text-decoration: none;
+}
+
+.header .menu:hover {
+  color: #495057;
+  background-color: #f1f3f5;
+}
+
+.header .menu.active {
+  color: #495057;
+  background-color: #f1f3f5;
+}
+
+
+

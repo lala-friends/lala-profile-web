@@ -2,37 +2,11 @@
   text-align: center;
 }
 
-.header {
-  margin-top: 1em;
-  margin-bottom: 3em;
-  display: flex;
-  justify-content: space-between;
-}
-
-.logo {
-  padding-top: 12px;
-  padding-bottom: 10px;
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.menus {
-  display: flex;
-}
-
-.menu {
-  color: #495057;
-  font-weight: 700;
-  background-color: #f1f3f5;
-  padding: 10px 25px;
-  margin-left: 1em;
-  border-radius: 22px;
-}
-
 .card {
     border-radius: 0;
     max-width: 300px;
     margin-left: 1em;
+    margin-bottom: 1em;
     align-self: flex-start;
 }
 
@@ -40,17 +14,17 @@
     color: #868e96;
 }
 
+.card .button-icon {
+    position: absolute;
+    color:red;
+}
+
 .flexbox {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .text-align-center {
   text-align: center;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

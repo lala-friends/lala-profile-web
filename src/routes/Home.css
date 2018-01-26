@@ -1,0 +1,22 @@
+.home {
+    background-color: #ffdeeb;
+}
+.home .container {
+    margin-top: 8em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.home .title {
+    margin-bottom: 1.5em;
+    font-weight: 600;
+    color: #495057;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.home .sub {
+    font-size: 18px;
+    font-weight: 400;
+    color: #868e96;
+    line-height: 1.5;
+}
