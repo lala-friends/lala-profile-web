@@ -1,7 +1,13 @@
 import React from 'react';
-import Person from '../components/Person';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-const About = () => {
+import About from '../routes/About';
+
+Enzyme.configure({adapter: new Adapter()});
+
+describe('<About/>', () => {
+    //TODO: axios mock
     const members = [{
         color: "#ffa8a8",
         thumbnail: "https://0.soompi.io/wp-content/uploads/2017/10/22073014/IU-1.jpg",
@@ -27,23 +33,12 @@ const About = () => {
         facebook: "",
         projects: []
     }];
-    return (
-        <div className="about container flexbox">
-            {members.map((profile, i) => {
-                return (<Person key={i}
-                                thumbnail={profile.thumbnail}
-                                name={profile.name}
-                                email={profile.email}
-                                comment={profile.comment}
-                                blog={profile.blog}
-                                github={profile.github}
-                                facebook={profile.facebook}
-                                color={profile.color}
-                                projects={profile.projects}
-                        />);
-            })}
-        </div>
-    )
-}
-
-export default About;
+    test('member의 수만큼 <Person/>이 그려진다', () => {
+        const wrapper = Enzyme.mount(<About/>);
+        expect(wrapper.find('Person')).toHaveLength(2);
+        expect(wrapper.find('Person').get(0).key).toBe("0");
+        expect(wrapper.find('Person').get(0).props).toEqual(members[0]);
+        expect(wrapper.find('Person').get(1).key).toBe("1");
+        expect(wrapper.find('Person').get(1).props).toEqual(members[1]);
+    });
+});

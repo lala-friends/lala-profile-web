@@ -20,7 +20,7 @@ class Person extends Component {
             <div className="person card">
                 <div className="background" style={{backgroundColor: this.props.color}}></div>
                 <div className="thumbnail-background"></div>
-                <img className="thumbnail" src="https://0.soompi.io/wp-content/uploads/2017/10/22073014/IU-1.jpg" />
+                <img className="thumbnail" src={this.props.thumbnail} />
                 <div className="card-body">
                     <div className="text-align-center">
                         <div className="name">{this.props.name}</div>
@@ -50,7 +50,7 @@ class Person extends Component {
                     {
                         this.props.projects.map((project, i)=>{
                             return (
-                                <a href="#" className="project-item" key={i}>
+                                <a href={`/project/${project.id}`} className="project-item" key={i}>
                                     <img src={project.thumbnail} />
                                     <div>
                                         {project.name}
