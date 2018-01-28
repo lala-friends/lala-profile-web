@@ -28,7 +28,7 @@ const About = () => {
         projects: []
     }];
     return (
-        <div className="container flexbox">
+        <div className="about container flexbox">
             {members.map((profile, i) => {
                 return (<Person key={i}
                                 thumbnail={profile.thumbnail}
