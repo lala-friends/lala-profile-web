@@ -1,0 +1,23 @@
+.detail .summary {
+    background: #a5d8ff;
+    padding: 1em;
+    vertical-align: middle;
+    padding-top: 10em;
+    padding-bottom: 10em;
+    color: #ffffff;
+}
+
+.detail .title {
+    font-size: 50px;
+    border-bottom: 1px solid #ffffff;
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+.detail .description {
+    font-size: 20px;
+}
+
+.detail .tags span{
+    margin-left: 0.5em;
+}

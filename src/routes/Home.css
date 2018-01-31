@@ -1,17 +1,15 @@
 .home {
-    background-color: #ffdeeb;
+    height: 100%;
+    margin-top: -8em;
 }
-.home .container {
-    margin-top: 8em;
-    padding-top: 3em;
-    padding-bottom: 3em;
-}
+
 .home .title {
     margin-bottom: 1.5em;
     font-weight: 600;
     color: #495057;
     font-size: 36px;
     line-height: 1.2;
+    text-align: left;
 }
 
 .home .sub {
@@ -19,4 +17,15 @@
     font-weight: 400;
     color: #868e96;
     line-height: 1.5;
+    text-align: left;
+}
+
+.elem1 {
+    height: 70%;
+    padding-top: 15em;
+}
+
+.elem2 {
+    height: 30%;
+    background: #e3fafc;
 }
