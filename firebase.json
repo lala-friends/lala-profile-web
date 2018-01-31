@@ -1,0 +1,6 @@
+{
+    "hosting": {
+        // Add the "redirects" section within "hosting"
+        "public": "build"
+    }
+}
