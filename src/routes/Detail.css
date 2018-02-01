@@ -5,6 +5,7 @@
     padding-top: 10em;
     padding-bottom: 10em;
     color: #ffffff;
+    margin-bottom: 2em;
 }
 
 .detail .title {
@@ -20,4 +21,24 @@
 
 .detail .tags span{
     margin-left: 0.5em;
+}
+
+.detail .card-item {
+    display: flex;
+}
+.detail .card-item img {
+    width: 300px;
+    height: auto;
+    float: left;
+}
+
+.detail .card-item .text {
+    margin: auto;
+    text-align: left;
+    margin-left: 1em;
+}
+
+.detail .card-item .text .title {
+    font-size: 40px;
+    font-weight: bold;
 }
