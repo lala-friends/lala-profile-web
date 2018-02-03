@@ -19,5 +19,5 @@
 .formFile .upload-button  {
     border: 1px solid #a5d8ff;
     background: #fff;
-    float: right!important;
+    margin-bottom: 0;
 }

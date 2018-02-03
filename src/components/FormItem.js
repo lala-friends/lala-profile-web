@@ -1,5 +1,5 @@
 import React from 'react';
-import './FormItems.css'
+import './FormItem.css'
 import FormFile from './FormFile';
 
 const FormItem = () => {

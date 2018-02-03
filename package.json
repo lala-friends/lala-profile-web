@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "firebase": "^4.9.1",
     "mdi": "^2.1.19",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
