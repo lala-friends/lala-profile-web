@@ -1,0 +1,23 @@
+.formComment {
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+.formComment .comment {
+    border: 1px solid #ddd;
+    margin-bottom: 0.5em;
+    min-height: 5em;
+}
+.formComment input {
+    width: 100%;
+    margin-right: 0.5em;
+    padding-left: 0.5em;
+}
+.flexbox {
+    flex-wrap: nowrap;
+}
+.formComment button {
+    border: 1px solid #a5d8ff;
+    background: #fff;
+    float: right!important;
+}
