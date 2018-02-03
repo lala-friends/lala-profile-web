@@ -1,13 +1,19 @@
 import React from 'react';
 import './Add.css';
 import FormFile from "../components/FormFile";
-import FormDescription from '../components/FormDescription';
+import FormItem from '../components/FormItem';
 
 class Add extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: 1
+            name: '',
+            description: '',
+            tags: [],
+            image: '',
+            items: [
+
+            ]
         };
     }
     handleCancle = (e) => {
@@ -17,8 +23,25 @@ class Add extends React.Component {
         console.log('save');
     }
     handleAdd = (e) => {
-        console.log(this.state.items)
-        this.setState({items: this.state.items+1});
+        const items = this.state.items;
+        items.push({})
+        console.log(items.length);
+        this.setState({items: items});
+    }
+    setTags = (text) => {
+        const arrays = text.split(' ');
+        this.setState({
+            tags: arrays
+        })
+    }
+    handleKeyDown = (e) => {
+        // 32: space, 13: enter, 8: delete
+        if(e.keyCode === 32 || e.keyCode === 13 || e.keyCode === 8) {
+            this.setTags(e.target.value);
+        }
+    }
+    handleOnBlur = (e) => {
+        this.setTags(e.target.value);
     }
     render() {
         return (
@@ -36,18 +59,29 @@ class Add extends React.Component {
 
                     <div className="group">
                         <div className="fieldName">Tags</div>
-                        <input type="text" />
+                        <input type="text" onKeyDown={this.handleKeyDown.bind(this)} onBlur={this.handleOnBlur.bind(this)}/>
+                        <div>
+                            {
+                                this.state.tags.map((text, i) => (
+                                    <div className="badge badge-pill badge-info" key={i}>{text}</div>
+                                ))
+                            }
+                        </div>
                     </div>
                     <div className="group">
                         <div className="fieldName">Project Image</div>
                         <FormFile />
                     </div>
+                    <div className="group">
+                        <div className="fieldName">Developers</div>
+                        <input type="text" />
+                    </div>
 
                 </div>
                 <div className="margin-bottom-1">
                 {
-                    [...Array(this.state.items)].map((x, i) =>
-                        <FormDescription key={i}/>
+                    [...Array(this.state.items.length)].map((x, i) =>
+                        <FormItem key={i}/>
                     )
                 }
                 </div>

@@ -1,11 +1,11 @@
 import React from 'react';
-import './FormDescription.css'
+import './FormItems.css'
 import FormFile from './FormFile';
 
-const FormDescription = () => {
+const FormItem = () => {
 
     return (
-        <div className="formDescription">
+        <div className="formItem">
             <div className="title">Description Card</div>
             <div className='group'>
                 <div className="fieldName">Description Image</div>
@@ -23,4 +23,4 @@ const FormDescription = () => {
     )
 }
 
-export default FormDescription;
+export default FormItem;

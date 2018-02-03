@@ -1,27 +1,27 @@
-.formDescription {
+.formItem {
     margin-bottom: 1em;
 }
 
-.formDescription .title {
+.formItem .title {
     font-size: 25px;
     margin-bottom: 1em;
 }
 
-.formDescription .group {
+.formItem .group {
     margin-bottom: 1em;
 }
 
-.formDescription .group .fieldName {
+.formItem .group .fieldName {
     font-size: 12px;
     color: #868e96;
 }
 
-.formDescription .group input {
+.formItem .group input {
     width: 100%;
     padding-left: 0.5em;
 }
 
-.formDescription .title {
+.formItem .title {
     font-size: 18px;
     margin-bottom: 0.5em;
 }

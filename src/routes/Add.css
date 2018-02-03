@@ -51,3 +51,6 @@
 .add .flexbox {
     justify-content: center;
 }
+.add .badge {
+    margin-right: 0.5em;
+}
