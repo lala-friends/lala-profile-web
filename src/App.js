@@ -7,6 +7,7 @@ import About from './routes/About';
 import Projects from './routes/Projects';
 import Detail from './routes/Detail';
 import Idea from './routes/Idea';
+import Add from './routes/Add';
 import NoMatch from './routes/NoMatch';
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route exact path="/project" component={Projects}/>
             <Route path="/project/:id" component={Detail}/>
             <Route path="/idea" component={Idea}/>
+            <Route path="/add" component={Add}/>
             <Route component={NoMatch} />
           </Switch>
         </div>

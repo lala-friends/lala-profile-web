@@ -1,0 +1,53 @@
+.add {
+    text-align: left;
+}
+
+.add .title {
+    font-size: 25px;
+    margin-bottom: 1em;
+}
+
+.add .group {
+    margin-bottom: 1em;
+}
+
+.add .fieldName {
+    font-size: 12px;
+    color: #868e96;
+}
+
+.add input {
+    width: 100%;
+    padding-left: 1em;
+}
+
+.add-button {
+    background-color: transparent;
+    border: 1px solid #a5d8ff;
+    border-radius: 30em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-bottom: 1em;
+}
+
+.add-button:hover {
+    background-color: #a5d8ff;
+}
+
+.material-button {
+    border-radius: 0;
+    width: 10em;
+    background-color: #a5d8ff;
+    border: none;
+}
+
+.material-button:hover {
+    background-color: #4dabf7;
+}
+.margin-left-1 {
+    margin-left: 1em;
+}
+
+.add .flexbox {
+    justify-content: center;
+}

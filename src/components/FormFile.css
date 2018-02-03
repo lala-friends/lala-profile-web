@@ -1,0 +1,23 @@
+
+.formFile {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.formFile input[type="file"] {
+    display: none;
+}
+
+.formFile input[type="text"] {
+    width: 100%;
+    margin-right: 0.5em;
+    padding-left: 0.5em;
+}
+
+.formFile .upload-button  {
+    border: 1px solid #a5d8ff;
+    background: #fff;
+    float: right!important;
+}

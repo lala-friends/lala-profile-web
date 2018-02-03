@@ -25,6 +25,7 @@
 
 .detail .card-item {
     display: flex;
+    margin-bottom: 3em;
 }
 .detail .card-item img {
     width: 300px;

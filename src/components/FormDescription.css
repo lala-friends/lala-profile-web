@@ -1,0 +1,35 @@
+.formDescription {
+    margin-bottom: 1em;
+}
+
+.formDescription .title {
+    font-size: 25px;
+    margin-bottom: 1em;
+}
+
+.formDescription .group {
+    margin-bottom: 1em;
+}
+
+.formDescription .group .fieldName {
+    font-size: 12px;
+    color: #868e96;
+}
+
+.formDescription .group input {
+    width: 100%;
+    padding-left: 0.5em;
+}
+
+.formDescription .title {
+    font-size: 18px;
+    margin-bottom: 0.5em;
+}
+
+.margin-bottom-3 {
+    margin-bottom: 3em;
+}
+.margin-bottom-1 {
+    margin-bottom: 1em;
+}
+

@@ -1,7 +1,23 @@
 import React from 'react';
+import Comment from '../components/Comment';
+import FormComment from '../components/FormComment';
 import './Detail.css';
 
 const Detail = () => {
+    const comments = [
+        {
+            id: 1, 
+            email: "tiffany@naver.com",
+            comment: "으허허",
+            date: new Date()
+        },
+        {
+            id: 2, 
+            email: "tiffany@naver.com",
+            comment: "으허허",
+            date: new Date()
+        }
+    ];
     return (
         <div className="detail container">
             <div className="summary">
@@ -25,6 +41,17 @@ const Detail = () => {
                     <div className="title">advertisement</div>
                     <div>advertisement, best presentation, biz, business, corporate, creative, devices, ecommerce, elegant, enterprise, entrepreneur, excel, keynote, marketing, minimal, mockup, modern, multipurpose, Pitch Deck Slides, seo, simple, smart, social media, start up, statistics, stats, swot analysis, tech</div>
                 </div>
+            </div>
+            <FormComment />
+            <div>
+                {
+                    comments.map((comment, key) => {
+                        return <Comment key={key}
+                                 email={comment.email}
+                                 comment={comment.comment}
+                                 date={comment.date}/>
+                    })
+                }
             </div>
         </div>
     )

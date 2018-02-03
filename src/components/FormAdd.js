@@ -1,19 +1,15 @@
 import React, {Component} from 'react';
-import './Form.css';
+import './FormAdd.css';
+import FormFile from './FormFile';
 
-class Form extends Component {
+class FormAdd extends Component {
     render() {
         return (
             <div className="form card">
                 <div className="form-header"></div>
                 <div className="card-body">
                     <div>Add Project</div>
-                    <div className="thumbnail-box">
-                        <input className="input-text" type="text" placeholder="file name" readOnly/>
-                        <label htmlFor="thumbnail">업로드</label>
-                        <input id="thumbnail" className="input-file" type="file" placeholder="image"/>
-                        
-                    </div>
+                    <FormFile/>
                     <input className="input-text" type="text" placeholder="title"/>
                     <textarea placeholder="description"/>
                     <input className="input-text" type="text" placeholder="dev"/>
@@ -24,4 +20,4 @@ class Form extends Component {
     }
 }
 
-export default Form;
+export default FormAdd;

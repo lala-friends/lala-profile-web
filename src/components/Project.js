@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
+import {withRouter} from "react-router-dom";
 import './Project.css'
 
 class Project extends Component {
+    handleClick = (e) => {
+        this.props.history.push("/project/" + this.props.id);
+    }
     render() {
         return (
-            <div className="flexbox container">
+            <div className="flexbox container" onClick={this.handleClick.bind(this)}>
                 <div className="project card">
                     <img className="thumbnail" src={this.props.thumbnail}/>
                     <div className="card-body">
@@ -26,4 +30,4 @@ class Project extends Component {
     }
 }
 
-export default Project;
+export default withRouter(Project);
