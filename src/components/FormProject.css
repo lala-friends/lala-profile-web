@@ -2,6 +2,10 @@
     margin-bottom: 1em;
 }
 
+.formProject img {
+    max-width: 100%;
+}
+
 .formProject .title {
     font-size: 25px;
     margin-bottom: 1em;

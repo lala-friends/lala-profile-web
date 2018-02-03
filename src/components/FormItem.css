@@ -2,6 +2,10 @@
     margin-bottom: 1em;
 }
 
+.formItem img {
+    max-width: 100%;
+}
+
 .formItem .title {
     font-size: 25px;
     margin-bottom: 1em;

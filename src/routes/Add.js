@@ -37,7 +37,7 @@ class Add extends React.Component {
             <div className="add container">
                 <div className="title">Add Project</div>
                 <div className="margin-bottom-3">
-                    <FormProject />
+                    <FormProject project={this.state}/>
                 </div>
                 <div className="margin-bottom-1">
                 {

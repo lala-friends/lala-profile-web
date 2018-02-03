@@ -17,22 +17,27 @@ class FormProject extends React.Component {
         this.setState({
             name: e.target.value
         });
+        this.props.project.name = e.target.value;
     }
     changeDescription(e) {
         this.setState({
             description: e.target.value
         });
+        this.props.project.description = e.target.value;
     }
     changeTags(e) {
         const arrays = e.target.value.split(' ');
         this.setState({
             tags: arrays
         });
+        this.props.project.tags = arrays;
     }
 
     updateImage(url) {
-        console.log('project');
-        console.log(url);
+        this.setState({
+            image: url
+        });
+        this.props.project.image = url;
     }
 
     render() {
@@ -60,10 +65,12 @@ class FormProject extends React.Component {
                 </div>
                 <div className="group">
                     <div className="fieldName">Project Image</div>
+                    <div className="flexbox">
                     {
                         this.state.image? <img src={this.state.image}/>: null
                     }
-                    <FormFile updateImage={this.updateImage.bind(this)}/>
+                    </div>
+                    <FormFile id="project" updateImage={this.updateImage.bind(this)}/>
                 </div>
                 <div className="group">
                     <div className="fieldName">Developers</div>

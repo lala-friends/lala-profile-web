@@ -17,8 +17,10 @@ class FormItem extends React.Component {
     }
 
     updateImage(url) {
-        console.log('item');
-        console.log(url);
+        this.setState({
+            image: url
+        });
+        this.props.changeItem.image = url;
     }
     render() {
         return (
@@ -26,10 +28,12 @@ class FormItem extends React.Component {
                 <div className="title">Description Card</div>
                 <div className='group'>
                     <div className="fieldName">Description Image</div>
+                    <div className="flexbox">
                     {
                         this.state.image? <img src={this.state.image}/>: null
                     }
-                    <FormFile key={this.props.changeItem.id} updateImage={this.updateImage.bind(this)}/>
+                    </div>
+                    <FormFile id={this.props.changeItem.id} updateImage={this.updateImage.bind(this)}/>
                 </div>
                 <div className="group">
                     <div className="fieldName">Description Title</div>
