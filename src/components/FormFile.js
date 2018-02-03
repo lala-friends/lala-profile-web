@@ -5,13 +5,18 @@ import Storage from '../utils/Storage';
 class FormFile extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            images: []
-        }
     }
-    handleChange = (e) => {
-        const storage = new Storage();
-        storage.uploadImage(e.target.files);
+    handleChange(e) {
+        this.props.updateImage("go");
+        // const storage = new Storage();
+        // storage.uploadImage(e.target.files).then(snapshot => {
+        //     console.log(snapshot.downloadURL);
+        //     if(this.props.updateRepImage !== null) {
+        //         this.props.updateRepImage(snapshot.downloadURL);
+        //     } else {
+        //         this.props.updateImage(snapshot.downloadURL);
+        //     }
+        // });
     }
     render() {
         return (

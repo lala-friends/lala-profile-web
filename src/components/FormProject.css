@@ -1,0 +1,27 @@
+.formProject {
+    margin-bottom: 1em;
+}
+
+.formProject .title {
+    font-size: 25px;
+    margin-bottom: 1em;
+}
+
+.formProject .group {
+    margin-bottom: 1em;
+}
+
+.formProject .group .fieldName {
+    font-size: 12px;
+    color: #868e96;
+}
+
+.formProject .group input {
+    width: 100%;
+    padding-left: 0.5em;
+}
+
+.formProject .title {
+    font-size: 18px;
+    margin-bottom: 0.5em;
+}
