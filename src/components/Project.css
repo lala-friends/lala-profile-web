@@ -1,4 +1,6 @@
-
+.project.card {
+    width: 18rem;
+}
 .project .thumbnail {
     width: 100%;
     max-width: 300px;

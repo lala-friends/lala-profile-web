@@ -26,17 +26,20 @@
 .detail .card-item {
     display: flex;
     margin-bottom: 3em;
+    justify-content: center;
+    flex: 0 0;
 }
 .detail .card-item img {
     width: 300px;
     height: auto;
     float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
 }
 
 .detail .card-item .text {
     margin: auto;
     text-align: left;
-    margin-left: 1em;
 }
 
 .detail .card-item .text .title {

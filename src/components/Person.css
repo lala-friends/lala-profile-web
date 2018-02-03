@@ -1,6 +1,8 @@
 .person {
     position: relative;
+    min-width: 18rem;
 }
+
 
 .person .background {
     height: 150px;

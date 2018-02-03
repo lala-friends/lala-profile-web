@@ -33,11 +33,11 @@ const Detail = () => {
                 </div>
             </div>
 
-            <div className="card-item">
-                <div className="img" > 
+            <div className="card-item row">
+                <div className="col-md-auto img" >
                     <img src="https://lh3.googleusercontent.com/raiF0nhQR3ODIFgby-vPcW6XpIaFZhtbFOnsTqFOwpN3CHfYtsd5QXUWDEpDL0puf94=h900-rw"/>
                 </div>
-                <div className="text">
+                <div className="col-sm-8 text">
                     <div className="title">advertisement</div>
                     <div>advertisement, best presentation, biz, business, corporate, creative, devices, ecommerce, elegant, enterprise, entrepreneur, excel, keynote, marketing, minimal, mockup, modern, multipurpose, Pitch Deck Slides, seo, simple, smart, social media, start up, statistics, stats, swot analysis, tech</div>
                 </div>
