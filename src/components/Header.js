@@ -7,8 +7,8 @@ const Header = () => {
         <div className="header container">
             <NavLink exact to="/" className="logo">LALA FRIENDS</NavLink>
             <div className="menus">
-                <NavLink exact to="/about" className="menu">About us</NavLink>
-                <NavLink exact to="/project" className="menu">Project</NavLink>
+                <NavLink exact to="/developers" className="menu">About us</NavLink>
+                <NavLink exact to="/products" className="menu">Product</NavLink>
             </div>
         </div>
     );

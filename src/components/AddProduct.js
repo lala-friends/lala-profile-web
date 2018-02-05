@@ -1,9 +1,9 @@
-import React from 'react';
-import './Add.css';
-import FormProject from '../components/FormProject';
-import FormItem from '../components/FormItem';
+import React, {Component} from 'react';
+import './AddProduct.css';
+import FormProject from './FormProject';
+import FormItem from './FormItem';
 
-class Add extends React.Component {
+class AddProduct extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,13 +15,13 @@ class Add extends React.Component {
             ]
         };
     }
-    handleCancle(e) {
+    handleCancle() {
         this.props.history.goBack();
     }
-    handleSave(e) {
+    handleSave() {
         console.log(this.state);
     }
-    handleAdd(e) {
+    handleAdd() {
         const items = this.state.items;
         items.push({
             id: '',
@@ -47,7 +47,7 @@ class Add extends React.Component {
                     })
                 }
                 </div>
-                <div id="formCard"></div>
+                <div id="formCard" />
                 <div  className="flexbox margin-bottom-3">
                     <button className="btn btn-light add-button" onClick={this.handleAdd.bind(this)}>add card</button>
                 </div>
@@ -60,4 +60,4 @@ class Add extends React.Component {
     }
 }
 
-export default Add;
+export default AddProduct;

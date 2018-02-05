@@ -1,6 +1,6 @@
 {
     "hosting": {
-        // Add the "redirects" section within "hosting"
+        // AddProduct the "redirects" section within "hosting"
         "public": "build"
     }
 }

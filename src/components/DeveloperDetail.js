@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './Person.css';
+import './DeveloperDetail.css';
 
-class Person extends Component { 
+class DeveloperDetail extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,17 +9,17 @@ class Person extends Component {
         };
     }
 
-    handleClick = (e) => {
+    handleClick = () => {
         this.setState({
             isShow: !this.state.isShow
         });
-    }
+    };
 
     render() { 
         return (
             <div className="person card">
-                <div className="background" style={{backgroundColor: `${this.props.color}`}}></div>
-                <div className="thumbnail-background"></div>
+                <div className="background" style={{backgroundColor: `${this.props.color}`}} />
+                <div className="thumbnail-background" />
                 <img className="thumbnail" src={this.props.thumbnail} />
                 <div className="card-body">
                     <div className="text-align-center">
@@ -30,15 +30,15 @@ class Person extends Component {
                     <hr/>
                     <div className="flexbox">
                         <a className="social-button border-right" href={this.props.blog}>
-                            <i className="mdi mdi-blogger"></i>
+                            <i className="mdi mdi-blogger" />
                             <div>blog</div>
                         </a>
                         <a className="social-button border-right" href={this.props.github}>
-                            <i className="mdi mdi-github-face"></i>
+                            <i className="mdi mdi-github-face" />
                             <div>github</div>
                         </a>
                         <a className="social-button"  href={this.props.facebook}>
-                            <i className="mdi mdi-facebook"></i>
+                            <i className="mdi mdi-facebook" />
                             <div>facebook</div>
                         </a>
                     </div>
@@ -66,4 +66,4 @@ class Person extends Component {
     }
 }
 
-export default Person;
+export default DeveloperDetail;

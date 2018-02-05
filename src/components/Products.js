@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
-import './Projects.css';
-import Project from '../components/Project';
+import './Products.css';
+import ProductItem from './ProductItem';
 
-class Projects extends React.Component{
-    handleClick = (e) => {
-        this.props.history.push("/add");
-    }
+class Projects extends Component{
+    handleClick = () => {
+        this.props.history.push("/products/new");
+    };
 
     render() {
         const projects = [{
@@ -47,12 +47,12 @@ class Projects extends React.Component{
                 <div className="flexbox container">
                 {
                     projects.map((project, i) => 
-                        <Project key={i}
-                                id={project.id}
-                                thumbnail={project.thumbnail}
-                                name={project.name}
-                                description={project.description}
-                                developers={project.developers}/>
+                        <ProductItem key={i}
+                                     id={project.id}
+                                     thumbnail={project.thumbnail}
+                                     name={project.name}
+                                     description={project.description}
+                                     developers={project.developers}/>
                     )
                 }
                 </div>

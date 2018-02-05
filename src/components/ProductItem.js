@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
-import './Project.css'
+import './Products.css'
 
-class Project extends Component {
-    handleClick = (e) => {
-        this.props.history.push("/project/" + this.props.id);
-    }
+class ProductItem extends Component {
+    handleClick = () => {
+        this.props.history.push("/products/" + this.props.id);
+    };
+
     render() {
         return (
             <div className="project card" onClick={this.handleClick.bind(this)}>
@@ -28,4 +29,4 @@ class Project extends Component {
     }
 }
 
-export default withRouter(Project);
+export default withRouter(ProductItem);

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import FormFile from './FormFile';
 import './FormProject.css';
 
-class FormProject extends React.Component {
+class FormProject extends Component {
     constructor(props) {
         super(props);
         this.state = {
