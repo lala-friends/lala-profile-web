@@ -6,7 +6,6 @@
 
 .person .background {
     height: 150px;
-    background-color: #c3fae8;
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
@@ -44,11 +43,11 @@
     font-size: 14px;
 }
 
-.person .comment {
+.person .introduce {
     font-size: 14px;
     color: #495057;
-    margin-top: 1em;
     border: none;
+    margin-bottom: 0.5em;
 }
 
 .person .flexbox {

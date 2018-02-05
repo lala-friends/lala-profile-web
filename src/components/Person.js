@@ -13,19 +13,19 @@ class Person extends Component {
         this.setState({
             isShow: !this.state.isShow
         });
-        console.log(this.state.isShow);
     }
-    render() {
+
+    render() { 
         return (
             <div className="person card">
-                <div className="background" style={{backgroundColor: this.props.color}}></div>
+                <div className="background" style={{backgroundColor: `${this.props.color}`}}></div>
                 <div className="thumbnail-background"></div>
                 <img className="thumbnail" src={this.props.thumbnail} />
                 <div className="card-body">
                     <div className="text-align-center">
                         <div className="name">{this.props.name}</div>
                         <div className="email">{this.props.email}</div>
-                        <div className="comment">{this.props.comment}</div>
+                        <div className="introduce">{this.props.introduce}</div>
                     </div>
                     <hr/>
                     <div className="flexbox">
@@ -48,16 +48,17 @@ class Person extends Component {
                 </div>
                 <div className={`${!this.state.isShow && 'inactive'}`}>
                     {
-                        this.props.projects.map((project, i)=>{
-                            return (
-                                <a href={`/project/${project.id}`} className="project-item" key={i}>
-                                    <img src={project.thumbnail} />
-                                    <div>
-                                        {project.name}
-                                    </div>
-                                </a>
-                            )
-                        })
+                        (!this.props.projects)? null:
+                            (this.props.projects.map((project, i)=>{
+                                return (
+                                    <a href={`/project/${project.id}`} className="project-item" key={i}>
+                                        <img src={project.thumbnail} />
+                                        <div>
+                                            {project.name}
+                                        </div>
+                                    </a>
+                                )
+                            }))
                     }
                 </div>
             </div>

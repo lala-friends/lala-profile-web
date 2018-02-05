@@ -23,5 +23,5 @@ yarn-error.log*
 package-lock.json
 .idea/
 
-setupENV.sh
+setupEnv.sh
 package-lock.json

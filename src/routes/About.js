@@ -1,49 +1,46 @@
 import React from 'react';
 import Person from '../components/Person';
+import Service from '../utils/Service';
 
-const About = () => {
-    const members = [{
-        color: "#ffa8a8",
-        thumbnail: "https://0.soompi.io/wp-content/uploads/2017/10/22073014/IU-1.jpg",
-        name: "Tiffany",
-        comment: "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라만세",
-        blog: "",
-        github: "",
-        facebook: "",
-        projects: [
-            {
-                id: 1, 
-                name: "lala-clipping", 
-                thumbnail: "https://img11.androidappsapk.co/300/f/4/0/com.lalafriends.tiffany.lalaclipping.png"
-            }]
-    },
-    {
-        color: "#c3fae8",
-        thumbnail: "https://0.soompi.io/wp-content/uploads/2017/10/22073014/IU-1.jpg",
-        name: "Tiffany",
-        comment: "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라만세",
-        blog: "",
-        github: "",
-        facebook: "",
-        projects: []
-    }];
-    return (
-        <div className="about container flexbox">
-            {members.map((profile, i) => {
-                return (<Person key={i}
-                                thumbnail={profile.thumbnail}
-                                name={profile.name}
-                                email={profile.email}
-                                comment={profile.comment}
-                                blog={profile.blog}
-                                github={profile.github}
-                                facebook={profile.facebook}
-                                color={profile.color}
-                                projects={profile.projects}
-                        />);
-            })}
-        </div>
-    )
+class About extends React.Component {
+    constructor(props) {
+        super(props);
+        this.service = new Service();
+        this.state = {
+            members: []
+        };
+        this.service.get('/profile/tiffany', (status1, res1) => {
+            this.service.get('/profile/ryan', (status2, res2) => {
+                const members = [];
+                members.push(res1);
+                members.push(res2);
+                this.setState({
+                    members: members
+                });
+            });
+        });
+    }
+  
+    render() {
+        return (
+            <div className="about container flexbox">
+                {this.state.members.map((profile, i) => {
+                    console.log(profile);
+                    return (<Person key={i}
+                                    thumbnail={profile.imageUrl}
+                                    name={profile.name}
+                                    email={profile.email}
+                                    introduce={profile.introduce}
+                                    blog={profile.blog}
+                                    github={profile.github}
+                                    facebook={profile.facebook}
+                                    color={profile.repColor}
+                                    projects={profile.projects}
+                            />);
+                })}
+            </div>
+        )
+    }
 }
 
 export default About;
