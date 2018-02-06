@@ -39,7 +39,7 @@ class AddProduct extends Component {
     render() {
         return (
             <div className="add-product container">
-                <div className="title">Add Project</div>
+                <div className="title">Add Product</div>
                 <div className="margin-bottom-3">
                     <FormProject project={this.state}/>
                 </div>

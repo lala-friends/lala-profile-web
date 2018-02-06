@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Developers from './components/Developers';
 import DeveloperDetail from './components/DeveloperDetail';
+import AddDeveloper from './components/AddDeveloper';
 import Products from './components/Products';
 import ProductDetail from './components/ProductDetail';
 import AddProduct from './components/AddProduct';
@@ -19,6 +20,7 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/developers" component={Developers}/>
+                        <Route exact path="/developers/new" component={AddDeveloper}/>
                         <Route path="/developers/:name" component={DeveloperDetail}/>
                         <Route exact path="/products" component={Products}/>
                         <Route exact path="/products/new" component={AddProduct}/>

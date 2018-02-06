@@ -64,7 +64,7 @@ class FormProduct extends Component {
                     <input type="text" value={this.state.name} onChange={this.changeName.bind(this)}/>
                 </div>
                 <div className="group">
-                    <div className="fieldName">Project Description</div>
+                    <div className="fieldName">Product Description</div>
                     <input type="text" value={this.state.description} onChange={this.changeDescription.bind(this)}/>
                 </div>
 
@@ -81,11 +81,9 @@ class FormProduct extends Component {
                 </div>
                 <div className="group">
                     <div className="fieldName">Project Image</div>
-                    <div className="flexbox img-wrapper">
-                        {
-                            this.state.image ? <img src={this.state.image}/> : null
-                        }
-                    </div>
+                    {
+                        this.state.image ? <div className='flexbox img-wrapper'><img src={this.state.image}/></div> : null
+                    }
                     <FormFile id="project" updateImage={this.updateImage.bind(this)}/>
                 </div>
                 <div className="group">

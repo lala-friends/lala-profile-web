@@ -7,19 +7,6 @@
     margin-bottom: 1em;
 }
 
-.add-button {
-    background-color: transparent;
-    border: 1px solid #a5d8ff;
-    border-radius: 30em;
-    padding-left: 2em;
-    padding-right: 2em;
-    margin-bottom: 1em;
-}
-
-.add-button:hover {
-    background-color: #a5d8ff;
-}
-
 .material-button {
     border-radius: 0;
     width: 10em;

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import DeveloperDetail from './DeveloperItem';
 import Service from '../utils/Service';
+import './Developers.css';
 
 class Developers extends Component {
     constructor(props) {
@@ -10,29 +11,38 @@ class Developers extends Component {
             members: []
         };
         this.service.get('/developers', (status, res) => {
+            console.log(res);
             this.setState({
                 members: res
             });
         });
     }
+
+    handleClick = () => {
+        this.props.history.push("/developers/new");
+    }
   
     render() {
         return (
-            <div className="about container flexbox">
-                {this.state.members.map((profile, i) => {
-                    console.log(profile);
-                    return (<DeveloperDetail key={i}
-                                             thumbnail={profile.imageUrl}
-                                             name={profile.name}
-                                             email={profile.email}
-                                             introduce={profile.introduce}
-                                             blog={profile.blog}
-                                             github={profile.github}
-                                             facebook={profile.facebook}
-                                             color={profile.repColor}
-                                             products={profile.products}
-                            />);
-                })}
+            <div className="developers container">
+                <div className='flexbox'>
+                    <button className='btn btn-light add-button' onClick={this.handleClick}>Add Developer</button>
+                </div>
+                <div className='flexbox'>
+                    {this.state.members.map((profile, i) => {
+                        return (<DeveloperDetail key={i}
+                                                thumbnail={profile.imageUrl}
+                                                name={profile.name}
+                                                email={profile.email}
+                                                introduce={profile.introduce}
+                                                blog={profile.blog}
+                                                github={profile.github}
+                                                facebook={profile.facebook}
+                                                color={profile.repColor}
+                                                products={profile.products}
+                                />);
+                    })}
+                </div>
             </div>
         )
     }

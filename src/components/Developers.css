@@ -1,0 +1,12 @@
+.developers .add-button {
+    background-color: transparent;
+    border: 1px solid #a5d8ff;
+    border-radius: 30em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-bottom: 3em;
+}
+
+.developers .add-button:hover {
+    background-color: #a5d8ff;
+}
