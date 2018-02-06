@@ -57,6 +57,6 @@ describe('DeveloperItem 컴포넌트 테스트', () => {
 
         wrapper.find('#product-button').simulate('click');
         expect(wrapper.find('#products.inactive')).toHaveLength(1);
-    })
+    });
 
 });

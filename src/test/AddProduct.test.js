@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import sinon from 'sinon';
 
 import AddProduct from '../components/AddProduct';
-import FormProject from '../components/FormProject';
+import FormProject from '../components/FormProduct';
 import FormItem from '../components/FormItem';
 import HTTP from '../utils/http-common';
 

@@ -9,14 +9,9 @@ class Developers extends Component {
         this.state = {
             members: []
         };
-        this.service.get('/profile/tiffany', (status1, res1) => {
-            this.service.get('/profile/ryan', (status2, res2) => {
-                const members = [];
-                members.push(res1);
-                members.push(res2);
-                this.setState({
-                    members: members
-                });
+        this.service.get('/developers', (status, res) => {
+            this.setState({
+                members: res
             });
         });
     }

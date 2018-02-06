@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './AddProduct.css';
-import FormProject from './FormProject';
+import FormProject from './FormProduct';
 import FormItem from './FormItem';
 import HTTP from '../utils/http-common';
 

@@ -7,7 +7,6 @@ describe('<Products>', () => {
     let sandbox;
     beforeEach(() => {
         sandbox = sinon.sandbox.create();
-        service = new Service();
     });
 
     test('get이 정상호출되는 경우 callback을 리턴한다', async() => {

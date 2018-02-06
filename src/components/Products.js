@@ -3,7 +3,7 @@ import {withRouter} from "react-router-dom";
 import './Products.css';
 import ProductItem from './ProductItem';
 
-class Projects extends Component{
+class Products extends Component{
     handleClick = () => {
         this.props.history.push("/products/new");
     };
@@ -61,4 +61,4 @@ class Projects extends Component{
     }
 }
 
-export default withRouter(Projects);
+export default withRouter(Products);
