@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DeveloperDetail from './DeveloperDetail';
+import DeveloperDetail from './DeveloperItem';
 import Service from '../utils/Service';
 
 class Developers extends Component {
@@ -35,7 +35,7 @@ class Developers extends Component {
                                              github={profile.github}
                                              facebook={profile.facebook}
                                              color={profile.repColor}
-                                             projects={profile.projects}
+                                             products={profile.products}
                             />);
                 })}
             </div>

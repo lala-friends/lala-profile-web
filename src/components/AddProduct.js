@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './AddProduct.css';
 import FormProject from './FormProject';
 import FormItem from './FormItem';
+import HTTP from '../utils/http-common';
 
 class AddProduct extends Component {
     constructor(props) {
@@ -15,13 +16,16 @@ class AddProduct extends Component {
             ]
         };
     }
-    handleCancle() {
+    handleCancle = () => {
         this.props.history.goBack();
-    }
-    handleSave() {
-        console.log(this.state);
-    }
-    handleAdd() {
+    };
+    handleSave = () => {
+        HTTP.post('/products/new', this.state, (status, response) => {
+            console.log(status);
+            console.log(response);
+        });
+    };
+    handleAdd = () => {
         const items = this.state.items;
         items.push({
             id: '',
@@ -30,11 +34,11 @@ class AddProduct extends Component {
             image: ''
         });
         this.setState({items: items});
-    }
+    };
 
     render() {
         return (
-            <div className="add container">
+            <div className="add-product container">
                 <div className="title">Add Project</div>
                 <div className="margin-bottom-3">
                     <FormProject project={this.state}/>
@@ -48,12 +52,12 @@ class AddProduct extends Component {
                 }
                 </div>
                 <div id="formCard" />
-                <div  className="flexbox margin-bottom-3">
-                    <button className="btn btn-light add-button" onClick={this.handleAdd.bind(this)}>add card</button>
+                <div className="flexbox margin-bottom-3">
+                    <button id='add-button' className="btn btn-light add-button" onClick={this.handleAdd}>add card</button>
                 </div>
                 <div className="flexbox margin-bottom-3">
-                    <button className="btn btn-light material-button" onClick={this.handleCancle.bind(this)}>취소하기</button>
-                    <button className="btn btn-light material-button margin-left-1" onClick={this.handleSave.bind(this)}>저장하기</button>
+                    <button id='cancel-button' className="btn btn-light material-button" onClick={this.handleCancle}>취소하기</button>
+                    <button id='save-button' className="btn btn-light material-button margin-left-1" onClick={this.handleSave}>저장하기</button>
                 </div>
             </div>
         );

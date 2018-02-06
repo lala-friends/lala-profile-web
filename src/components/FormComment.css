@@ -7,6 +7,7 @@
     border: 1px solid #ddd;
     margin-bottom: 0.5em;
     min-height: 5em;
+    width: 100%;
 }
 .formComment input {
     width: 100%;

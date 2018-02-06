@@ -1,8 +1,8 @@
-.add {
+.add-product {
     text-align: left;
 }
 
-.add .title {
+.add-product .title {
     font-size: 25px;
     margin-bottom: 1em;
 }
@@ -34,9 +34,9 @@
     margin-left: 1em;
 }
 
-.add .flexbox {
+.add-product .flexbox {
     justify-content: center;
 }
-.add .badge {
+.add-product .badge {
     margin-right: 0.5em;
 }
