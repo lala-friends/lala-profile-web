@@ -54,6 +54,10 @@
     height: 100%;
 }
 
+.addDeveloper .btnGroup {
+    margin-top: 3em;
+}
+
 .addDeveloper .btnGroup button{
     background-color: transparent;
     border: 1px solid #a5d8ff;

@@ -55,9 +55,9 @@ class AddProduct extends Component {
                 <div className="flexbox margin-bottom-3">
                     <button id='add-button' className="btn btn-light add-button" onClick={this.handleAdd}>add card</button>
                 </div>
-                <div className="flexbox margin-bottom-3">
-                    <button id='cancel-button' className="btn btn-light material-button" onClick={this.handleCancle}>취소하기</button>
-                    <button id='save-button' className="btn btn-light material-button margin-left-1" onClick={this.handleSave}>저장하기</button>
+                <div className="flexbox btnGroup">
+                    <button id='cancel-button' className="btn btn-light" onClick={this.handleCancle}>취소하기</button>
+                    <button id='save-button' className="btn btn-light" onClick={this.handleSave}>저장하기</button>
                 </div>
             </div>
         );

@@ -7,16 +7,6 @@
     margin-bottom: 1em;
 }
 
-.material-button {
-    border-radius: 0;
-    width: 10em;
-    background-color: #a5d8ff;
-    border: none;
-}
-
-.material-button:hover {
-    background-color: #4dabf7;
-}
 .margin-left-1 {
     margin-left: 1em;
 }
@@ -26,4 +16,21 @@
 }
 .add-product .badge {
     margin-right: 0.5em;
+}
+
+.add-product .btnGroup {
+    margin-top: 3em;
+}
+.add-product .btnGroup button {
+    background-color: transparent;
+    border: 1px solid #a5d8ff;
+    border-radius: 30em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+.add-product .btnGroup button:hover {
+    background-color: #a5d8ff;
 }

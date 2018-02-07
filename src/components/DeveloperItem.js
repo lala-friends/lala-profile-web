@@ -52,8 +52,8 @@ class DeveloperItem extends Component {
                         (!this.props.products)? null:
                             (this.props.products.map((product, i)=>{
                                 return (
-                                    <a href={`/products/${product.id}`} className="project-item" key={i}>
-                                        <img src={product.thumbnail} />
+                                    <a href={`/products/${product.productId}`} className="project-item" key={i}>
+                                        <img src={product.imageUrl} />
                                         <div>
                                             {product.name}
                                         </div>
