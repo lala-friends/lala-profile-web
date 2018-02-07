@@ -69,6 +69,7 @@
 
 .developerDetail .item-card {
     padding-left: 3em;
+    margin-left: 3em;
 }
 
 .developerDetail .item-card .project {
@@ -81,7 +82,7 @@
     min-width: 18rem;
 }
 .developerDetail .image-wrapper {
-    margin-right: 2em;
+    margin-right: 1em;
     margin-bottom: 1em;
 }
 .developerDetail .square-image{
@@ -94,13 +95,19 @@
     justify-content: space-between;
     margin: auto;
 }
-.developerDetail .product-card {
+.developerDetail .card {
     max-width: 500px;
-    min-width: 18rem;
-    margin-right: 2em;
-    margin-bottom: 1em;
+    min-width: 15rem;
+    border: none;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .width-100 {
     width: 100%;
+}
+
+.developerDetail .item-title {
+    font-size: 20px;
+    margin-bottom: 1em;
 }

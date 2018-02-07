@@ -141,27 +141,29 @@ class DeveloperDetail extends Component {
                     {
                         developer.products.map((product, key) => {
                             return (
-                                <div key={key} className='flexbox product-card'> 
-                                    <div className='image-wrapper'>
-                                        <img className='square-image' src={product.imageUrl} />
-                                    </div>
-                                    <div>
-                                        <div className='subtitle'>{product.name}</div>
-                                        <div className='group'>
-                                            <div className='fieldName'>한줄소개</div>
-                                            <div>{product.introduce}</div>
+                                <div key={key} className='card'> 
+                                    <div className='item-title'>{product.name}</div>
+                                    <div className='flexbox'>
+                                        <div className='image-wrapper'>
+                                            <img className='square-image' src={product.imageUrl} />
                                         </div>
-                                        <div className='group'>
-                                            <div className='fieldName'>기술 스택</div>
-                                            {
-                                                product.tech.map((text, i) => (
-                                                    <div className="badge badge-pill badge-info" key={i}>{text}</div>
-                                                ))
-                                            }
-                                        </div>
-                                        <div className='group'>
-                                            <div className='fieldName'>역할</div>
-                                            <div>{product.role}</div>
+                                        <div>
+                                            <div className='group'>
+                                                <div className='fieldName'>한줄소개</div>
+                                                <div>{product.introduce}</div>
+                                            </div>
+                                            <div className='group'>
+                                                <div className='fieldName'>기술 스택</div>
+                                                {
+                                                    product.tech.map((text, i) => (
+                                                        <div className="badge badge-pill badge-info" key={i}>{text}</div>
+                                                    ))
+                                                }
+                                            </div>
+                                            <div className='group'>
+                                                <div className='fieldName'>역할</div>
+                                                <div>{product.role}</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
