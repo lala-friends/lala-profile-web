@@ -19,7 +19,7 @@ class ProductItem extends Component {
                     <div className="flexbox developer">
                         {
                             this.props.developers.map((developer, i) =>
-                                <img src={developer.thumbnail} title={developer.name} key={i}/>
+                                <img src={developer.imageUrl} title={developer.name} key={i}/>
                             )
                         }
                     </div>

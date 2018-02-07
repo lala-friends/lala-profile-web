@@ -11,7 +11,7 @@ class DeveloperItem extends Component {
     }
 
     handleClickProducts = (e) => {
-        e.preventDefault()
+        e.stopPropagation();
         this.setState({
             isShow: !this.state.isShow
         });

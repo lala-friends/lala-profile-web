@@ -11,7 +11,6 @@ class Developers extends Component {
             members: []
         };
         this.service.get('/developers', (status, res) => {
-            console.log(res);
             this.setState({
                 members: res
             });
