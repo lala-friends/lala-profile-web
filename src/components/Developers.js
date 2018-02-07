@@ -31,6 +31,7 @@ class Developers extends Component {
                 <div className='flexbox'>
                     {this.state.members.map((profile, i) => {
                         return (<DeveloperDetail key={i}
+                                                id={profile.personId}
                                                 thumbnail={profile.imageUrl}
                                                 name={profile.name}
                                                 email={profile.email}
@@ -40,6 +41,7 @@ class Developers extends Component {
                                                 facebook={profile.facebook}
                                                 color={profile.repColor}
                                                 products={profile.products}
+                                                history={this.props.history}
                                 />);
                     })}
                 </div>

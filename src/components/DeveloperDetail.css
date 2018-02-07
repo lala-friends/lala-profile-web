@@ -1,0 +1,106 @@
+.developerDetail {
+    text-align: left;
+}
+.developerDetail .title{
+    font-size: 40px;
+    margin-bottom: 2em;
+}
+
+.developerDetail .subtitle {
+    font-size: 20px;
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+.developerDetail .detailbox {
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-bottom: 1px solid #e9ecef;
+} 
+
+.developerDetail .round-image{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    border-radius: 50%;
+}
+
+.developerDetail .group {
+    margin-bottom: 1em;
+    width: 100%;
+    text-align: left;
+}
+
+.developerDetail .fieldName {
+    font-size: 12px;
+    color: #868e96;
+}
+
+.developerDetail .group .badge{
+    margin-right: 0.5em;
+}
+
+.developerDetail .timeline {
+    border-left: 1px solid #000;
+    position: relative;
+    margin-right: 5em;
+}
+
+.developerDetail .timeline .pointer {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #000; 
+    margin-left: -3.5em;
+    margin-top: 5em;
+}
+
+.developerDetail .timeline .triangle {
+    width: 0px;height: 0px;
+    border-left: 1em solid none;
+    border-right: 1em solid red;
+    border-bottom: 1em solid transparent;
+    border-top: 1em solid  transparent;
+    margin-top: -1.5em;
+}
+
+.developerDetail .item-card {
+    padding-left: 3em;
+}
+
+.developerDetail .item-card .project {
+    margin-bottom: 3em;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    width: 90%;
+    margin-top: -6em;
+    min-width: 18rem;
+}
+.developerDetail .image-wrapper {
+    margin-right: 2em;
+    margin-bottom: 1em;
+}
+.developerDetail .square-image{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.developerDetail .product-wrapper {
+    justify-content: space-between;
+    margin: auto;
+}
+.developerDetail .product-card {
+    max-width: 500px;
+    min-width: 18rem;
+    margin-right: 2em;
+    margin-bottom: 1em;
+}
+
+.width-100 {
+    width: 100%;
+}

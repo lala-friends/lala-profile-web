@@ -10,15 +10,21 @@ class DeveloperItem extends Component {
         };
     }
 
-    handleClick = () => {
+    handleClickProducts = (e) => {
+        e.preventDefault()
         this.setState({
             isShow: !this.state.isShow
         });
     };
 
+    moveToDeveloperDetail = () => {
+        console.log(this.props)
+        this.props.history.push(`/developers/${this.props.id}`);
+    }
+
     render() { 
         return (
-            <div className="person card">
+            <div className="person card" onClick={this.moveToDeveloperDetail}>
                 <div id='color' className="background" style={{backgroundColor: `${this.props.color}`}} />
                 <div className="thumbnail-background" />
                 <img id='thumbnail' className="thumbnail" src={this.props.thumbnail} />
@@ -44,7 +50,7 @@ class DeveloperItem extends Component {
                         </a>
                     </div>
                 </div>
-                <div id="product-button" className="project-button flexbox" onClick={this.handleClick}>
+                <div id="product-button" className="project-button flexbox" onClick={this.handleClickProducts}>
                     <span>Products</span>
                 </div>
                 <div id="products" className={`${!this.state.isShow && 'inactive'}`}>
