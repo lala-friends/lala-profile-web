@@ -2,7 +2,14 @@ import HTTP from '../utils/http-common';
 
 class Service {
     get(path, callback) {
-        return HTTP.get(path).then(
+
+        var config = {
+            httpsAgent : {
+                rejectUnauthorized : false
+            }
+        };
+
+        return HTTP.get(path, config).then(
             (response) => callback(response.status, response.data)
         );
     }
