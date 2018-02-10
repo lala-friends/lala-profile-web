@@ -4,21 +4,6 @@ import FormComment from './FormComment';
 import Service from '../utils/Service';
 import './ProductDetail.css';
 
-const comments = [
-    {
-        id: 1,
-        email: "tiffany@naver.com",
-        comment: "으허허",
-        date: new Date()
-    },
-    {
-        id: 2,
-        email: "tiffany@naver.com",
-        comment: "으허허",
-        date: new Date()
-    }
-];
-
 class ProductDetail extends Component {
     constructor(props) {
         super(props);
