@@ -2,13 +2,6 @@ import HTTP from '../utils/http-common';
 
 class Service {
     get(path, callback) {
-
-        var config = {
-            httpsAgent : {
-                rejectUnauthorized : false
-            }
-        };
-
         return HTTP.get(path, config).then(
             (response) => callback(response.status, response.data)
         );
