@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Service from '../utils/Service';
 import './DeveloperDetail.css';
 
 const developer ={
@@ -63,37 +64,68 @@ const developer ={
 }
 
 class DeveloperDetail extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            personId: '',
+            name: '',
+            email: '',
+            imageUrl: '',
+            introduce: '',
+            repColor: '',
+            blog: '',
+            github: '',
+            facebook: '',
+            projects: [],
+            products: []
+        };
+        this.service = new Service();
+        this.service.get(`/developer/${this.props.match.params.name}`, (status, response) => {
+            this.setState({
+                id: response.personId,
+                name: response.name,
+                email: response.email,
+                imageUrl: response.imageUrl,
+                introduce: response.introduce,
+                color: response.repColor,
+                blog: response.blog,
+                github: response.github,
+                facebook: response.facebook,
+                projects: response.projects || [],
+                products: response.products || []
+            });
+        });
+    }
     
     render() {
         return (
             <div className="developerDetail container flexbox">
-                
                 <div className='flexbox'>
-                    <img className='round-image' src={developer.imageUrl} />
+                    <img className='round-image' src={this.state.imageUrl} />
                 </div>
                 <div className='detailbox flexbox'>
-                    <div className='title'>about {developer.name.toUpperCase()}</div>
+                    <div className='title'>about {this.state.name.toUpperCase()}</div>
                     <div className='group'>
                         <div className='fieldName'>이름</div>
-                        <div>{developer.name}</div>
+                        <div>{this.state.name}</div>
                     </div>
                     <div className='group'>
                         <div className='fieldName'>이메일</div>
-                        <div>{developer.email}</div>
+                        <div>{this.state.email}</div>
                     </div>
                     <div className='group'>
                         <div className='fieldName'>한줄소개</div>
-                        <div>{developer.introduce}</div>
+                        <div>{this.state.introduce}</div>
                     </div>
                 </div>
                 <div className='flexbox detailbox'>
                     <div className='subtitle'>Projects</div>
 
                     {
-                        developer.projects.map((project, key) => {
+                        this.state.projects.map((project, key) => {
                             return (
-                                <div className='flexbox width-100'>
-                                    <div key={key} className='item-card timeline width-100'>
+                                <div key={key} className='flexbox width-100'>
+                                    <div className='item-card timeline width-100'>
                                         <div className='pointer'></div>
                                         <div className='flexbox'>
                                             <div className='triangle' style={{ borderRight: `2em solid ${developer.repColor}`}}></div>
@@ -139,7 +171,7 @@ class DeveloperDetail extends Component {
                     <div className='subtitle'>Products</div>
                     <div className='flexbox product-wrapper'>
                     {
-                        developer.products.map((product, key) => {
+                        this.state.products.map((product, key) => {
                             return (
                                 <div key={key} className='card'> 
                                     <div className='item-title'>{product.name}</div>

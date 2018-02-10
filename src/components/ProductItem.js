@@ -4,7 +4,7 @@ import './Products.css'
 
 class ProductItem extends Component {
     handleClick = () => {
-        this.props.history.push("/products/" + this.props.id);
+        this.props.history.push(`/product/${this.props.name}`);
     };
 
     render() {

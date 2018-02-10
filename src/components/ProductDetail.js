@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Comment from './Comment';
 import FormComment from './FormComment';
+import Service from '../utils/Service';
 import './ProductDetail.css';
 
 const comments = [
@@ -18,46 +19,81 @@ const comments = [
     }
 ];
 
-const ProductDetail = () => (
-    <div className="detail container">
-        <div className="summary">
-            <div className="title">
-                lala-clipping
-            </div>
-            <div className="description">
-                Use, by you or one client, in a single end product which end users are not charged for.
-            </div>
-            <div className="tags">
-                <span>#android</span>
-                <span>#nodejs</span>
-            </div>
-        </div>
+class ProductDetail extends Component {
+    constructor(props) {
+        super(props);
+        this.service = new Service();
+        this.state = {
+            product: {
+                productId: '',
+                name: '',
+                introduce: '',
+                imageUrl: '',
+                repColor: '',
+                techs: [],
+                productDetails: [],
+                comments: []
+            }
+        };
 
-        <div className="card-item row">
-            <div className="col-md-auto img">
-                <img
-                    src="https://lh3.googleusercontent.com/raiF0nhQR3ODIFgby-vPcW6XpIaFZhtbFOnsTqFOwpN3CHfYtsd5QXUWDEpDL0puf94=h900-rw"/>
-            </div>
-            <div className="col-sm-8 text">
-                <div className="title">advertisement</div>
-                <div>advertisement, best presentation, biz, business, corporate, creative, devices, ecommerce, elegant,
-                    enterprise, entrepreneur, excel, keynote, marketing, minimal, mockup, modern, multipurpose, Pitch
-                    Deck Slides, seo, simple, smart, social media, start up, statistics, stats, swot analysis, tech
+        console.log(this.props);
+        this.service.get(`/product/${this.props.match.params.name}`, (status, response) => {
+            this.setState({
+                product: response
+            });
+        });
+    }
+    render() {
+        return (
+            <div className="detail container">
+                <div className="summary">
+                    <div className="title">
+                        {this.state.product.name}
+                    </div>
+                    <div className="description">
+                        {this.state.product.introduce}
+                    </div>
+                    <div className="tags">
+                        {
+                            this.state.product.techs.map((t, key) => {
+                                return (<span key={key}>#{t}</span>);
+                            })
+                        }
+                    </div>
+                </div>
+
+                {
+                    this.state.product.productDetails.map((detail, key) => {
+                        return (
+                            <div key={key} className="card-item row">
+                                <div className="img col-md-auto">
+                                    <img
+                                        src={detail.imageUrl}/>
+                                </div>
+                                <div className="col text">
+                                    <div className="title">{detail.title}</div>
+                                    <div>{detail.description}</div>
+                                </div>
+                            </div>
+                        );
+                    })
+                }
+                
+                <FormComment/>
+                <div>
+                    {
+                        this.state.product.comments.map((comment, key) => {
+                            return <Comment key={key}
+                                            email={comment.email}
+                                            comment={comment.message}
+                                            date={comment.regDt}/>
+                        })
+                    }
                 </div>
             </div>
-        </div>
-        <FormComment/>
-        <div>
-            {
-                comments.map((comment, key) => {
-                    return <Comment key={key}
-                                    email={comment.email}
-                                    comment={comment.comment}
-                                    date={comment.date}/>
-                })
-            }
-        </div>
-    </div>
-);
+        );
+    }
+    
+}
 
 export default ProductDetail;

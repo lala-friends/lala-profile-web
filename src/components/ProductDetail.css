@@ -29,9 +29,14 @@
     justify-content: center;
     flex: 0 0;
 }
+.detail .card-item .img {
+    position: relative;
+
+}
 .detail .card-item img {
-    width: 300px;
-    height: auto;
+    width: auto;
+    max-width: 30em;
+    max-height: 30em;
     float: left;
     margin-right: 1em;
     margin-bottom: 1em;

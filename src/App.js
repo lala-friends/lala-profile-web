@@ -20,11 +20,11 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/developers" component={Developers}/>
-                        <Route exact path="/developers/new" component={AddDeveloper}/>
-                        <Route path="/developers/:name" component={DeveloperDetail}/>
+                        <Route exact path="/developer/new" component={AddDeveloper}/>
+                        <Route path="/developer/:name" component={DeveloperDetail}/>
                         <Route exact path="/products" component={Products}/>
-                        <Route exact path="/products/new" component={AddProduct}/>
-                        <Route path="/products/:id" component={ProductDetail}/>
+                        <Route exact path="/product/new" component={AddProduct}/>
+                        <Route path="/product/:name" component={ProductDetail}/>
 
                         <Route component={NoMatch}/>
                     </Switch>

@@ -19,7 +19,7 @@ class DeveloperItem extends Component {
 
     moveToDeveloperDetail = () => {
         console.log(this.props)
-        this.props.history.push(`/developers/${this.props.id}`);
+        this.props.history.push(`/developer/${this.props.name}`);
     }
 
     render() { 
