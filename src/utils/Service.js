@@ -2,7 +2,7 @@ import HTTP from '../utils/http-common';
 
 class Service {
     get(path, callback) {
-        return HTTP.get(path, config).then(
+        return HTTP.get(path).then(
             (response) => callback(response.status, response.data)
         );
     }
