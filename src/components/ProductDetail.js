@@ -3,28 +3,33 @@ import Comment from './Comment';
 import FormComment from './FormComment';
 import Service from '../utils/Service';
 import './ProductDetail.css';
+import ProductDetailCard from './ProductDetailCard';
 
 class ProductDetail extends Component {
     constructor(props) {
         super(props);
         this.service = new Service();
         this.state = {
-            product: {
-                productId: '',
-                name: '',
-                introduce: '',
-                imageUrl: '',
-                repColor: '',
-                techs: [],
-                productDetails: [],
-                comments: []
-            }
+            id: '',
+            name: '',
+            introduce: '',
+            imageUrl: '',
+            repColor: '',
+            techs: [],
+            details: [],
+            comments: []
         };
 
-        console.log(this.props);
         this.service.get(`/product/${this.props.match.params.name}`, (status, response) => {
             this.setState({
-                product: response
+                id: response.productId,
+                name: response.name,
+                introduce: response.introduce,
+                imageUrl: response.imageUrl,
+                color: response.repColor,
+                techs: response.techs,
+                details: response.productDetails,
+                comments: response.comments
             });
         });
     }
@@ -33,14 +38,14 @@ class ProductDetail extends Component {
             <div className="detail container">
                 <div className="summary">
                     <div className="title">
-                        {this.state.product.name}
+                        {this.state.name}
                     </div>
                     <div className="description">
-                        {this.state.product.introduce}
+                        {this.state.introduce}
                     </div>
                     <div className="tags">
                         {
-                            this.state.product.techs.map((t, key) => {
+                            this.state.techs.map((t, key) => {
                                 return (<span key={key}>#{t}</span>);
                             })
                         }
@@ -48,33 +53,19 @@ class ProductDetail extends Component {
                 </div>
 
                 {
-                    this.state.product.productDetails.map((detail, key) => {
-                        return (
-                            <div key={key} className="card-item row">
-                                <div className="img col-md-auto">
-                                    <img
-                                        src={detail.imageUrl}/>
-                                </div>
-                                <div className="col text">
-                                    <div className="title">{detail.title}</div>
-                                    <div>{detail.description}</div>
-                                </div>
-                            </div>
-                        );
-                    })
+                    this.state.details.map((detail, key) => 
+                            <ProductDetailCard key={key} title={detail.title} description={detail.description} imageUrl={detail.imageUrl} />
+                    )
                 }
                 
                 <FormComment/>
-                <div>
-                    {
-                        this.state.product.comments.map((comment, key) => {
-                            return <Comment key={key}
-                                            email={comment.email}
-                                            comment={comment.message}
-                                            date={comment.regDt}/>
-                        })
-                    }
-                </div>
+                {
+                    this.state.comments.map((comment, key) => <Comment key={key}
+                                        email={comment.email}
+                                        comment={comment.message}
+                                        date={comment.regDt}/>
+                    )
+                }
             </div>
         );
     }

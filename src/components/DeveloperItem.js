@@ -18,7 +18,6 @@ class DeveloperItem extends Component {
     };
 
     moveToDeveloperDetail = () => {
-        console.log(this.props)
         this.props.history.push(`/developer/${this.props.name}`);
     }
 
@@ -27,7 +26,7 @@ class DeveloperItem extends Component {
             <div className="person card" onClick={this.moveToDeveloperDetail}>
                 <div id='color' className="background" style={{backgroundColor: `${this.props.color}`}} />
                 <div className="thumbnail-background" />
-                <img id='thumbnail' className="thumbnail" src={this.props.thumbnail} />
+                <img alt='개발자 프로필 이미지' id='thumbnail' className="thumbnail" src={this.props.thumbnail} />
                 <div className="card-body">
                     <div className="text-align-center">
                         <div id='name' className="name">{this.props.name}</div>
@@ -59,7 +58,7 @@ class DeveloperItem extends Component {
                             (this.props.products.map((product, i)=>{
                                 return (
                                     <a href={`/products/${product.productId}`} className="project-item" key={i}>
-                                        <img src={product.imageUrl} />
+                                        <img alt='제품 컨셉 이미지' src={product.imageUrl} />
                                         <div>
                                             {product.name}
                                         </div>

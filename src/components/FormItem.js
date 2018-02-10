@@ -30,7 +30,7 @@ class FormItem extends Component {
                     <div className="fieldName">Description Image</div>
                     <div className="flexbox">
                     {
-                        this.state.image? <img src={this.state.image}/>: null
+                        this.state.image? <img alt='제품의 상세 설명을 위한 이미지' src={this.state.image}/>: null
                     }
                     </div>
                     <FormFile id={this.props.changeItem.id} updateImage={this.updateImage.bind(this)}/>

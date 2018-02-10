@@ -20,7 +20,7 @@ class AddProduct extends Component {
         this.props.history.goBack();
     };
     handleSave = () => {
-        HTTP.post('/products/new', this.state, (status, response) => {
+        HTTP.post('/product/new', this.state, (status, response) => {
             console.log(status);
             console.log(response);
         });

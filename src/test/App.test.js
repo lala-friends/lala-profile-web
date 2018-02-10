@@ -104,9 +104,9 @@ describe('<App/>', () => {
         expect(wrapper.find(NoMatch)).toHaveLength(0);
     });
 
-    test('/products/new 경로로 들어왔을 때, Header와 AddProduct 컴포넌트가 보여진다.', () => {
+    test('/product/new 경로로 들어왔을 때, Header와 AddProduct 컴포넌트가 보여진다.', () => {
         const wrapper = Enzyme.mount(
-            <MemoryRouter initialEntries={['/products/new']}>
+            <MemoryRouter initialEntries={['/product/new']}>
                 <App/>
             </MemoryRouter>
         );

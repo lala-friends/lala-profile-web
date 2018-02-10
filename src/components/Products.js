@@ -16,7 +16,7 @@ class Products extends Component{
         });
     }
     handleClick = () => {
-        this.props.history.push("/products/new");
+        this.props.history.push("/product/new");
     };
 
     render() {

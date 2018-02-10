@@ -45,7 +45,7 @@ describe('<AddProduct />', () => {
         const stub = sandbox.stub(HTTP, 'post');
         wrapper.find('#save-button').simulate('click');
 
-        expect(stub.withArgs('/products/new', wrapper.state()).calledOnce).toEqual(true);
+        expect(stub.withArgs('/product/new', wrapper.state()).calledOnce).toEqual(true);
     });
 
     //TODO: 취소버튼 클릭시 테스트

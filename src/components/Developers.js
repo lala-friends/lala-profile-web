@@ -18,7 +18,7 @@ class Developers extends Component {
     }
 
     handleClick = () => {
-        this.props.history.push("/developers/new");
+        this.props.history.push("/developer/new");
     }
   
     render() {

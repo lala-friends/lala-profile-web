@@ -82,7 +82,7 @@ class FormProduct extends Component {
                 <div className="group">
                     <div className="fieldName">Project Image</div>
                     {
-                        this.state.image ? <div className='flexbox img-wrapper'><img src={this.state.image}/></div> : null
+                        this.state.image ? <div className='flexbox img-wrapper'><img alt='제품 컨셉 이미지' src={this.state.image}/></div> : null
                     }
                     <FormFile id="project" updateImage={this.updateImage.bind(this)}/>
                 </div>

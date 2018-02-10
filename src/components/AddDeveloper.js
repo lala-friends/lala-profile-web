@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import './AddDeveloper.css';
 import FormFile from './FormFile';
-import HTTP from '../utils/http-common';
 
 class AddDeveloer extends Component {
     constructor(props) {
         super(props);
+        this.colorPalette = ['#ffa8a8', '#faa2c1', '#eebefa', '#d0bfff', '#bac8ff', '#a5d8ff', '#c5f6fa', '#99e9f2', '#96f2d7', '#b2f2bb', '#ffe066', '#ff922b'];
         this.state = {
             name: '',
             email: '',
             introduce: '',
             tags: [],
             imageUrl: '',
-            color: '',
+            color: '#ffa8a8',
             blog: '',
             github: '',
             facebook: ''
@@ -89,7 +89,7 @@ class AddDeveloer extends Component {
                 <div className="group">
                     <div className="fieldName">Developer Image</div>
                     {
-                        this.state.imageUrl ? <div className='flexbox img-wrapper'><img src={this.state.imageUrl}/></div> : null
+                        this.state.imageUrl ? <div className='flexbox img-wrapper'><img alt='개발자 프로필 이미지' src={this.state.imageUrl}/></div> : null
                     }
                     <FormFile id="developer" updateImage={this.updateImage}/>
                 </div>
@@ -97,7 +97,7 @@ class AddDeveloer extends Component {
                     <div className="fieldName">Project Color</div>
                     <div className="colors">
                         {
-                            ['#ffa8a8', '#faa2c1', '#eebefa', '#d0bfff', '#bac8ff', '#a5d8ff', '#c5f6fa', '#99e9f2', '#96f2d7', '#b2f2bb', '#ffe066', '#ff922b'].map((color, key) => {
+                            this.colorPalette.map((color, key) => {
                                 return (
                                     <div key={key} className='color' style={{backgroundColor: `${color}`}} onClick={this.changeColor}>
                                         {
