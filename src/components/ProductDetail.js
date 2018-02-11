@@ -45,8 +45,8 @@ class ProductDetail extends Component {
                     </div>
                     <div className="tags">
                         {
-                            this.state.techs.map((t, key) => {
-                                return (<span key={key}>#{t}</span>);
+                            this.state.techs.map((tech, key) => {
+                                return (<span key={key}>#{tech}</span>);
                             })
                         }
                     </div>
