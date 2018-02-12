@@ -6,21 +6,21 @@ class FormItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            image: ''
+            title: '',
+            description: '',
+            imageUrl: ''
         }
     }
-    changeTitle(e) {
-        this.props.changeItem.title = e.target.value;
-    }
-    changeDescription(e) {
-        this.props.changeItem.description = e.target.value;
+    change = (propertyName, e) => {
+        const state = {};
+        state[propertyName] = e.target.value;
+        this.setState(state);
     }
 
     updateImage(url) {
         this.setState({
-            image: url
+            imageUrl: url
         });
-        this.props.changeItem.image = url;
     }
     render() {
         return (
@@ -37,11 +37,11 @@ class FormItem extends Component {
                 </div>
                 <div className="group">
                     <div className="fieldName">Description Title</div>
-                    <input type="text" onChange={this.changeTitle.bind(this)}/>
+                    <input type="text" onChange={this.change.bind(this, 'title')}/>
                 </div>
                 <div className="group">
                     <div className="fieldName">Description Detail</div>
-                    <input type="text" onChange={this.changeDescription.bind(this)}/>
+                    <input type="text" onChange={this.change.bind(this, 'description')}/>
                 </div>
             </div>
         )

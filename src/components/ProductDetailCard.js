@@ -1,22 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class ProductDetailCard extends Component {
-    
-    render() {
-        return (
-            <div className="card-item row">
-                <div className={`img col-md-auto ${!this.props.imageUrl && 'inactive'}`}>
-                    <img alt='제품의 설명을 위한 이미지' src={this.props.imageUrl}/>
-                </div>
-                <div className="col text">
-                    <div className="title">{this.props.title}</div>
-                    <div>{this.props.description}</div>
-                </div>
+const ProductDetailCard = (props) => {
+    return (
+        <div className="card-item row">
+            <div className={`img col-md-auto ${!props.imageUrl && 'inactive'}`}>
+                <img alt='제품의 설명을 위한 이미지' src={props.imageUrl}/>
             </div>
-        );
-    }   
-}
+            <div className="col text">
+                <div className="title">{props.title}</div>
+                <div>{props.description}</div>
+            </div>
+        </div>
+    );
+}   
 
 ProductDetailCard.propTypes = {
     imageUrl: PropTypes.string,

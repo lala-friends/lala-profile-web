@@ -16,33 +16,22 @@ class FormProduct extends Component {
         }
     }
 
-    changeName(e) {
-        this.setState({
-            name: e.target.value
-        });
-        this.props.project.name = e.target.value;
+    change = (propertyName, e) => {
+        const state = {};
+        state[propertyName] = e.target.value;
+        this.setState(state);
     }
-
-    changeDescription(e) {
-        this.setState({
-            description: e.target.value
-        });
-        this.props.project.description = e.target.value;
-    }
-
     changeTags(e) {
         const arrays = e.target.value.split(' ');
         this.setState({
             tags: arrays
         });
-        this.props.project.tags = arrays;
     }
 
     updateImage(url) {
         this.setState({
-            image: url
+            imageUrl: url
         });
-        this.props.project.image = url;
     }
 
     changeColor = (e) => {
@@ -58,11 +47,11 @@ class FormProduct extends Component {
             <div className="formProduct">
                 <div className="group">
                     <div className="fieldName">Product Name</div>
-                    <input type="text" value={this.state.name} onChange={this.changeName.bind(this)}/>
+                    <input type="text" value={this.state.name} onChange={this.change.bind(this, 'name')}/>
                 </div>
                 <div className="group">
                     <div className="fieldName">Product Description</div>
-                    <input type="text" value={this.state.description} onChange={this.changeDescription.bind(this)}/>
+                    <input type="text" value={this.state.description} onChange={this.change.bind(this, 'description')}/>
                 </div>
 
                 <div className="group">

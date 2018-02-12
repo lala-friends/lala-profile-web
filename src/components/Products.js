@@ -22,7 +22,7 @@ class Products extends Component{
         return (
             <div className="product">
                 <div className="container">
-                    <button className="btn btn-light add-button" onClick={this.handleClick.bind(this)}>Add Product</button>
+                    <button className="btn btn-light add-button" onClick={this.handleClick}>Add Product</button>
                 </div>
 
                 <div className="flexbox container">

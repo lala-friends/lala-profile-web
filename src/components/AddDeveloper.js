@@ -23,24 +23,25 @@ class AddDeveloer extends Component {
     handleCancle = () => {
         this.props.history.goBack();
     }
-
     handleSave = () => {
         console.log(this.state);
     }
-
     change = (propertyName, e) => {
-        console.log(e.target);
         const state = {};
         state[propertyName] = e.target.value;
         this.setState(state);
     }
     changeTags = (e) => {
-        const arrays = e.target.value.split(' ');
+        const tags = new Set(e.target.value.split(' '));
         this.setState({
-            tags: arrays
+            tags: [...tags]
         });
     }
-
+    updateImage = (url) => {
+        this.setState({
+            imageUrl: url
+        });
+    }
     changeColor = (e) => {
         const hexa = rgbToHexa(e.target.style.backgroundColor);
         this.setState({
@@ -79,9 +80,9 @@ class AddDeveloer extends Component {
                 <div className="group">
                     <div className="fieldName">Developer Image</div>
                     {
-                        this.state.imageUrl ? <div className='flexbox img-wrapper'><img alt='개발자 프로필 이미지' src={this.state.imageUrl}/></div> : null
+                        this.state.imageUrl && <div className='flexbox img-wrapper'><img alt='개발자 프로필 이미지' src={this.state.imageUrl}/></div>
                     }
-                    <FormFile id="developer" updateImage={this.change.bind(this, 'imageUrl')}/>
+                    <FormFile id="developer" updateImage={this.updateImage}/>
                 </div>
                 <div className="group">
                     <div className="fieldName">Project Color</div>

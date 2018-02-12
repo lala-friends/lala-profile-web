@@ -71,3 +71,7 @@
 .addDeveloper .btnGroup button:hover {
     background-color: #a5d8ff;
 }
+
+.addDeveloper .badge {
+    margin-right: 0.5em;
+}
