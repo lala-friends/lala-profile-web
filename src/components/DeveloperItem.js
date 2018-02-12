@@ -34,7 +34,7 @@ class DeveloperItem extends Component {
                         <div id='introduce' className="introduce">{this.props.introduce}</div>
                     </div>
                     <hr/>
-                    <div className="flexbox">
+                    <div className='flexbox'>
                         <a id='blog' className="social-button border-right" href={this.props.blog}>
                             <i className="mdi mdi-blogger" />
                             <div>blog</div>
@@ -55,16 +55,16 @@ class DeveloperItem extends Component {
                 <div id="products" className={`${!this.state.isShow && 'inactive'}`}>
                     {
                         (!this.props.products)? null:
-                            (this.props.products.map((product, i)=>{
-                                return (
-                                    <a href={`/products/${product.productId}`} className="project-item" key={i}>
-                                        <img alt='제품 컨셉 이미지' src={product.imageUrl} />
-                                        <div>
-                                            {product.name}
-                                        </div>
-                                    </a>
+                            (this.props.products.map((product, key) => (
+                                <a href={`/products/${product.productId}`} className="project-item" key={key}>
+                                    <img alt='제품 컨셉 이미지' src={product.imageUrl} />
+                                    <div>
+                                        {product.name}
+                                    </div>
+                                </a>
                                 )
-                            }))
+                            )
+                        )
                     }
                 </div>
             </div>

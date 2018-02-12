@@ -3,17 +3,6 @@ import PropTypes from 'prop-types';
 import './Comment.css';
 
 class Comment extends Component {
-    pad = (number, width) => {
-        let numberStr = number.toString();
-        if (numberStr.length >= width) {
-            return numberStr;
-        } else {
-            for(let i=width-numberStr.length; i>0; i--)
-                numberStr = '0' + numberStr;
-            return numberStr;
-        }
-    };
-
     render() {
         return (
             <div className="comment">

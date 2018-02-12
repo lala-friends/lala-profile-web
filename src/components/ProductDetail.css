@@ -34,9 +34,8 @@
 
 }
 .detail .card-item img {
-    width: auto;
-    max-width: 30em;
-    max-height: 30em;
+    width: 100%;
+    max-width: 25em;
     float: left;
     margin-right: 1em;
     margin-bottom: 1em;

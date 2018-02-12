@@ -54,7 +54,10 @@ class ProductDetail extends Component {
 
                 {
                     this.state.details.map((detail, key) => 
-                            <ProductDetailCard key={key} title={detail.title} description={detail.description} imageUrl={detail.imageUrl} />
+                            <ProductDetailCard key={key} 
+                                title={detail.title} 
+                                description={detail.description} 
+                                imageUrl={detail.imageUrl} />
                     )
                 }
                 

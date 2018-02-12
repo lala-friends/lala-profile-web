@@ -28,21 +28,22 @@ class Developers extends Component {
                     <button className='btn btn-light add-button' onClick={this.handleClick}>Add Developer</button>
                 </div>
                 <div className='flexbox'>
-                    {this.state.members.map((profile, i) => {
-                        return (<DeveloperDetail key={i}
-                                                id={profile.personId}
-                                                thumbnail={profile.imageUrl}
-                                                name={profile.name}
-                                                email={profile.email}
-                                                introduce={profile.introduce}
-                                                blog={profile.blog}
-                                                github={profile.github}
-                                                facebook={profile.facebook}
-                                                color={profile.repColor}
-                                                products={profile.products}
-                                                history={this.props.history}
-                                />);
-                    })}
+                    {this.state.members.map((profile, i) => (
+                            <DeveloperDetail key={i}
+                                id={profile.personId}
+                                thumbnail={profile.imageUrl}
+                                name={profile.name}
+                                email={profile.email}
+                                introduce={profile.introduce}
+                                blog={profile.blog}
+                                github={profile.github}
+                                facebook={profile.facebook}
+                                color={profile.repColor}
+                                products={profile.products}
+                                history={this.props.history} />
+                            )
+                        )
+                    }
                 </div>
             </div>
         )

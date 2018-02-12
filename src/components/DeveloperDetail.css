@@ -82,8 +82,10 @@
     min-width: 18rem;
 }
 .developerDetail .image-wrapper {
-    margin-right: 1em;
+    margin-top: 1em;
     margin-bottom: 1em;
+    width: 100%;
+    text-align: center;
 }
 .developerDetail .square-image{
     width: 150px;
@@ -102,6 +104,13 @@
     border: none;
     flex-wrap: wrap;
     flex-direction: row;
+    padding: 1em;
+    background: #f8f9fa;
+    width: 20em;
+}
+
+.developerDetail .card .group {
+    width: 17em;
 }
 
 .width-100 {
@@ -111,4 +120,6 @@
 .developerDetail .item-title {
     font-size: 20px;
     margin-bottom: 1em;
+    text-align: center;
+    width: 100%;
 }

@@ -22,6 +22,7 @@ class DeveloperDetail extends Component {
         };
         this.service = new Service();
         this.service.get(`/developer/${this.props.match.params.name}`, (status, response) => {
+            console.log(response);
             this.setState({
                 id: response.personId,
                 name: response.name,
@@ -59,32 +60,33 @@ class DeveloperDetail extends Component {
                         <div>{this.state.introduce}</div>
                     </div>
                 </div>
-                <div className='flexbox detailbox'>
+                <div className={`flexbox detailbox ${this.state.projects.length===0 && 'inactive'}`}>
                     <div className='subtitle'>Projects</div>
-
                     {
-                        this.state.projects.map((project, key) => {
+                        this.state.projects.map((project, projectKey) => {
                             return (
-                                <ProjectCard key={key} 
+                                <ProjectCard key={`project-${projectKey}`}  
                                     color={this.state.color} 
-                                    name={project.name} 
-                                    period={project.period} 
-                                    role={project.role} 
-                                    summary={project.summary} 
-                                    detail={project.detail} 
-                                    techs={project.techs} />         
+                                    name={project.projectName} 
+                                    from={project.periodFrom} 
+                                    to={project.periodTo} 
+                                    introduce={project.introduce}
+                                    roles={project.personalRole}
+                                    description={project.description} 
+                                    techs={project.techs}
+                                    link={project.link} />         
                             );
                         })
                     }  
 
                 </div>
-                <div className='detailbox flexbox'>
+                <div className={`detailbox flexbox ${this.state.products.length===0 && 'inactive'}`}>
                     <div className='subtitle'>Products</div>
                     <div className='flexbox product-wrapper'>
                     {
-                        this.state.products.map((product, key) => {
+                        this.state.products.map((product, productKey) => {
                             return (
-                                <ProductCard key={key} 
+                                <ProductCard key={`product-${productKey}`} 
                                     name={product.name} 
                                     imageUrl={product.imageUrl} 
                                     introduce={product.introduce} 

@@ -6,7 +6,7 @@ class ProductDetailCard extends Component {
     render() {
         return (
             <div className="card-item row">
-                <div className="img col-md-auto">
+                <div className={`img col-md-auto ${!this.props.imageUrl && 'inactive'}`}>
                     <img alt='제품의 설명을 위한 이미지' src={this.props.imageUrl}/>
                 </div>
                 <div className="col text">

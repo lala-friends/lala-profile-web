@@ -11,7 +11,6 @@ class Products extends Component{
             products: []
         };
         this.service.get('/products', (status, response) => {
-            console.log(response)
             this.setState({products: response});
         });
     }
@@ -31,7 +30,7 @@ class Products extends Component{
                     this.state.products.map((product, key) =>
                         <ProductItem key={key}
                                      id={product.productId}
-                                     thumbnail={product.imageUrl}
+                                     imageUrl={product.imageUrl}
                                      name={product.name}
                                      description={product.introduce}
                                      developers={product.persons}/>

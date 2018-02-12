@@ -21,11 +21,10 @@
 }
 
 .elem1 {
-    height: 70%;
     padding-top: 15em;
+    padding-bottom: 10em;
 }
 
 .elem2 {
-    height: 30%;
     background: #e3fafc;
 }
