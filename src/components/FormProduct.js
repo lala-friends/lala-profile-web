@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import FormFile from './FormFile';
 import './FormProduct.css';
+import {rgbToHexa} from '../utils/StyleUtil';
+import ColorPalette from './ColorPalette';
 
 class FormProduct extends Component {
     constructor(props) {
@@ -42,19 +44,14 @@ class FormProduct extends Component {
         });
         this.props.project.image = url;
     }
-    rgbToHexa = (red, green, blue) => {
-        const rgb = blue | (green << 8) | (red << 16);
-        return '#' + (0x1000000 + rgb).toString(16).slice(1)
-    }
 
     changeColor = (e) => {
         const rgb = e.target.style.backgroundColor;
-        const hexa = this.rgbToHexa(...rgb.substring(4, rgb.length-1).split(', '));
+        const hexa = rgbToHexa(rgb);
         this.setState({
             color: hexa
         });
     } 
-
     
     render() {
         return (
@@ -89,17 +86,7 @@ class FormProduct extends Component {
                 <div className="group">
                     <div className="fieldName">Project Color</div>
                     <div className="colors">
-                        {
-                            ['#ffa8a8', '#faa2c1', '#eebefa', '#d0bfff', '#bac8ff', '#a5d8ff', '#c5f6fa', '#99e9f2', '#96f2d7', '#b2f2bb', '#ffe066', '#ff922b'].map((color, key) => {
-                                return (
-                                    <div key={key} className='color' style={{backgroundColor: `${color}`}} onClick={this.changeColor}>
-                                        {
-                                            (this.state.color===color)? (<i className='mdi mdi-check' />): null
-                                        }
-                                        
-                                    </div>)
-                            })
-                        }
+                        <ColorPalette color={this.state.color} changeColor={this.changeColor}/>
                     </div>
                 </div>
                 <div className="group">

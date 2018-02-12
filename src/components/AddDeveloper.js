@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import './AddDeveloper.css';
 import FormFile from './FormFile';
+import {rgbToHexa} from '../utils/StyleUtil';
+import ColorPalette from './ColorPalette';
 
 class AddDeveloer extends Component {
     constructor(props) {
         super(props);
-        this.colorPalette = ['#ffa8a8', '#faa2c1', '#eebefa', '#d0bfff', '#bac8ff', '#a5d8ff', '#c5f6fa', '#99e9f2', '#96f2d7', '#b2f2bb', '#ffe066', '#ff922b'];
         this.state = {
             name: '',
             email: '',
@@ -27,32 +28,21 @@ class AddDeveloer extends Component {
         console.log(this.state);
     }
 
-    changeName = (e) => this.setState({ name: e.target.value });
-    changeEmail = (e) => this.setState({ email: e.target.value });
-    changeIntroduce = (e) => this.setState({ introduce: e.target.value });
-    changeImageUrl = (e) => this.setState({ imageUrl: e.target.value });
-    changeColor = (e) => this.setState({ color: e.target.value });
-    changeBlog = (e) => this.setState({ blog: e.target.value });
-    changeGithub = (e) => this.setState({ github: e.target.value });
-    changeFacebook = (e) => this.setState({ facebook: e.target.value });
+    change = (propertyName, e) => {
+        console.log(e.target);
+        const state = {};
+        state[propertyName] = e.target.value;
+        this.setState(state);
+    }
     changeTags = (e) => {
         const arrays = e.target.value.split(' ');
         this.setState({
             tags: arrays
         });
     }
-    updateImage = (url) => {
-        this.setState({
-            imageUrl: url
-        });
-    }
-    rgbToHexa = (red, green, blue) => {
-        const rgb = blue | (green << 8) | (red << 16);
-        return '#' + (0x1000000 + rgb).toString(16).slice(1)
-    }
+
     changeColor = (e) => {
-        const rgb = e.target.style.backgroundColor;
-        const hexa = this.rgbToHexa(...rgb.substring(4, rgb.length-1).split(', '));
+        const hexa = rgbToHexa(e.target.style.backgroundColor);
         this.setState({
             color: hexa
         });
@@ -64,15 +54,15 @@ class AddDeveloer extends Component {
                 <div className="title">Add Developer</div>
                 <div className='group'>
                     <div className='fieldName'>이름</div>
-                    <input type='text' onChange={this.changeName}/>
+                    <input type='text' onChange={this.change.bind(this, 'name')}/>
                 </div>
                 <div className='group'>
                     <div className='fieldName'>이메일</div>
-                    <input type='text' onChange={this.changeEmail}/>
+                    <input type='text' onChange={this.change.bind(this, 'email')}/>
                 </div>
                 <div className='group'>
                     <div className='fieldName'>한줄소개</div>
-                    <input type='text' onChange={this.changeIntroduce}/>
+                    <input type='text' onChange={this.change.bind(this, 'introduce')}/>
                 </div>
 
                 <div className="group">
@@ -91,36 +81,26 @@ class AddDeveloer extends Component {
                     {
                         this.state.imageUrl ? <div className='flexbox img-wrapper'><img alt='개발자 프로필 이미지' src={this.state.imageUrl}/></div> : null
                     }
-                    <FormFile id="developer" updateImage={this.updateImage}/>
+                    <FormFile id="developer" updateImage={this.change.bind(this, 'imageUrl')}/>
                 </div>
                 <div className="group">
                     <div className="fieldName">Project Color</div>
                     <div className="colors">
-                        {
-                            this.colorPalette.map((color, key) => {
-                                return (
-                                    <div key={key} className='color' style={{backgroundColor: `${color}`}} onClick={this.changeColor}>
-                                        {
-                                            (this.state.color===color)? (<i className='mdi mdi-check' />): null
-                                        }
-                                        
-                                    </div>)
-                            })
-                        }
+                        <ColorPalette color={this.state.color} changeColor={this.changeColor}/>
                     </div>
                 </div>
 
                 <div className='group'>
                     <div className='fieldName'>Blog</div>
-                    <input type='text' onChange={this.changeBlog}/>
+                    <input type='text' onChange={this.change.bind(this, 'blog')}/>
                 </div>
                 <div className='group'>
                     <div className='fieldName'>Github</div>
-                    <input type='text' onChange={this.changeGithub}/>
+                    <input type='text' onChange={this.change.bind(this, 'github')}/>
                 </div>
                 <div className='group'>
                     <div className='fieldName'>Facebook</div>
-                    <input type='text' onChange={this.changeFacebook}/>
+                    <input type='text' onChange={this.change.bind(this, 'facebook')}/>
                 </div>
                 <div className='flexbox btnGroup'>
                     <button className='btn btn-light' onClick={this.handleCancle}>취소하기</button>
