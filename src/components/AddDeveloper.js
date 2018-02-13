@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './AddDeveloper.css';
 import FormFile from './FormFile';
-import {rgbToHexa} from '../utils/StyleUtil';
 import ColorPalette from './ColorPalette';
+import {rgbToHexa} from '../utils/StyleUtil';
 
 class AddDeveloer extends Component {
     constructor(props) {

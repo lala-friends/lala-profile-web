@@ -3,6 +3,7 @@ import FormFile from './FormFile';
 import './FormProduct.css';
 import {rgbToHexa} from '../utils/StyleUtil';
 import ColorPalette from './ColorPalette';
+import PropTypes from 'prop-types';
 
 class FormProduct extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class FormProduct extends Component {
             name: '',
             description: '',
             tags: [],
-            image: '',
+            imageUrl: '',
             color: '#ffa8a8'
         }
     }
@@ -19,28 +20,28 @@ class FormProduct extends Component {
     change = (propertyName, e) => {
         const state = {};
         state[propertyName] = e.target.value;
-        this.setState(state);
+        this.setState(state, this.props.changeProject(this.state));
     }
+
     changeTags(e) {
-        const arrays = e.target.value.split(' ');
+        const tags = new Set(e.target.value.split(' '));
         this.setState({
-            tags: arrays
-        });
+            tags: [...tags]
+        }, this.props.changeProject(this.state));
     }
 
     updateImage(url) {
         this.setState({
             imageUrl: url
-        });
+        }, this.props.changeProject(this.state));
     }
 
     changeColor = (e) => {
-        const rgb = e.target.style.backgroundColor;
-        const hexa = rgbToHexa(rgb);
+        const hexa = rgbToHexa(e.target.style.backgroundColor);
         this.setState({
             color: hexa
-        });
-    } 
+        }, this.props.changeProject(this.state));
+    }
     
     render() {
         return (
@@ -68,7 +69,7 @@ class FormProduct extends Component {
                 <div className="group">
                     <div className="fieldName">Project Image</div>
                     {
-                        this.state.image ? <div className='flexbox img-wrapper'><img alt='제품 컨셉 이미지' src={this.state.image}/></div> : null
+                        this.state.imageUrl && <div className='flexbox img-wrapper'><img alt='제품 컨셉 이미지' src={this.state.imageUrl}/></div>
                     }
                     <FormFile id="project" updateImage={this.updateImage.bind(this)}/>
                 </div>
@@ -85,6 +86,10 @@ class FormProduct extends Component {
             </div>
         )
     }
+}
+
+FormProduct.propTypes = {
+    changeProject: PropTypes.func.isRequired
 }
 
 export default FormProduct;

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './AddProduct.css';
 import FormProject from './FormProduct';
 import FormItem from './FormItem';
-import HTTP from '../utils/http-common';
 
 class AddProduct extends Component {
     constructor(props) {
@@ -11,19 +10,15 @@ class AddProduct extends Component {
             name: '',
             description: '',
             tags: [],
-            image: '',
-            items: [
-            ]
+            imageUrl: '',
+            items: []
         };
     }
     handleCancle = () => {
         this.props.history.goBack();
     };
     handleSave = () => {
-        HTTP.post('/product/new', this.state, (status, response) => {
-            console.log(status);
-            console.log(response);
-        });
+        console.log(this.state);
     };
     handleAdd = () => {
         const items = this.state.items;
@@ -31,17 +26,19 @@ class AddProduct extends Component {
             id: '',
             title: '',
             description: '',
-            image: ''
+            imageUrl: ''
         });
         this.setState({items: items});
     };
-
+    changeProject = (project) => {
+        this.setState(project);
+    };
     render() {
         return (
             <div className="add-product container">
                 <div className="title">Add Product</div>
                 <div className="margin-bottom-3">
-                    <FormProject project={this.state}/>
+                    <FormProject changeProject={this.changeProject}/>
                 </div>
                 <div className="margin-bottom-1">
                 {

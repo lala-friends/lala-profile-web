@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './FormFile.css';
 import Storage from '../utils/Storage';
+import PropTypes from 'prop-types';
 
 class FormFile extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class FormFile extends Component {
             name: ''
         }
     }
-    handleChange(e) {
+    handleChange = (e) => {
         if(!e.target.files[0]) {
             return;
         }
@@ -26,12 +27,17 @@ class FormFile extends Component {
     render() {
         return (
             <div className="formFile">
-                <input id={`upload_file + ${this.props.id}`} type="file" onChange={this.handleChange.bind(this)} />
+                <input id={`upload_file + ${this.props.id}`} type="file" onChange={this.handleChange} />
                 <input type="text" placeholder="file name" value={this.state.name} readOnly/>
                 <label className="btn btn-light upload-button" htmlFor={`upload_file + ${this.props.id}`} >upload</label>
             </div>
         )
     }
+}
+
+FormFile.propTypes = {
+    id: PropTypes.string,
+    updateImage: PropTypes.func.isRequired
 }
 
 export default FormFile;
