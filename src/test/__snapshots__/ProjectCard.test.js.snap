@@ -1,0 +1,2076 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectCard ProjectCard컴포넌트로 넘겨진 props가 화면에 렌더링된다. 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ProjectCard
+    color="#ffa8a8"
+    description="자세한 소개"
+    from={2017-01-01T00:00:00.000Z}
+    introduce="간단소개"
+    link="www.al.com"
+    name="알리안츠 프로젝트"
+    roles="지급"
+    techs={
+        Array [
+            "java",
+            "oracle",
+          ]
+    }
+    to={2018-01-01T00:00:00.000Z}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="item-card timeline width-100"
+>
+        <div
+                className="pointer"
+        />
+        <div
+                className="flexbox"
+        >
+                <div
+                        className="triangle"
+                        style={
+                                Object {
+                                        "borderRight": "2em solid #ffa8a8",
+                                      }
+                        }
+                />
+                <div
+                        className="project"
+                        style={
+                                Object {
+                                        "backgroundColor": "#ffa8a8",
+                                      }
+                        }
+                >
+                        <div
+                                className="group"
+                        >
+                                <div
+                                        className="fieldName"
+                                >
+                                        프로젝트명
+                                </div>
+                                <div
+                                        id="projectName"
+                                >
+                                        알리안츠 프로젝트
+                                </div>
+                        </div>
+                        <div
+                                className="group"
+                        >
+                                <div
+                                        className="fieldName"
+                                >
+                                        기간
+                                </div>
+                                <div
+                                        id="projectPeriod"
+                                >
+                                        2017-01-01
+                                         - 
+                                        2018-01-01
+                                </div>
+                        </div>
+                        <div
+                                className="group inactive"
+                        >
+                                <div
+                                        className="fieldName"
+                                >
+                                        역할
+                                </div>
+                                <div
+                                        id="role"
+                                />
+                        </div>
+                        <div
+                                className="group false"
+                        >
+                                <div
+                                        className="fieldName"
+                                >
+                                        프로젝트 요약
+                                </div>
+                                <div
+                                        id="projectSummary"
+                                >
+                                        간단소개
+                                </div>
+                        </div>
+                        <div
+                                className="group false"
+                        >
+                                <div
+                                        className="fieldName"
+                                >
+                                        프로젝트 상세
+                                </div>
+                                <div
+                                        id="projectDescription"
+                                >
+                                        <span>
+                                                자세한 소개
+                                                <br />
+                                        </span>
+                                </div>
+                        </div>
+                        <div
+                                className="group false"
+                        >
+                                <div
+                                        className="fieldName"
+                                >
+                                        관련 링크
+                                </div>
+                                <a
+                                        href="www.al.com"
+                                        id="link"
+                                >
+                                        www.al.com
+                                </a>
+                        </div>
+                        <div
+                                className="group false"
+                        >
+                                <div
+                                        className="fieldName"
+                                >
+                                        기술 스택
+                                </div>
+                                <div
+                                        id="techs"
+                                >
+                                        <div
+                                                className="badge badge-pill badge-info"
+                                        >
+                                                java
+                                        </div>
+                                        <div
+                                                className="badge badge-pill badge-info"
+                                        >
+                                                oracle
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>,
+      "className": "flexbox width-100",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="pointer"
+/>,
+          <div
+            className="flexbox"
+>
+            <div
+                        className="triangle"
+                        style={
+                                    Object {
+                                                "borderRight": "2em solid #ffa8a8",
+                                              }
+                        }
+            />
+            <div
+                        className="project"
+                        style={
+                                    Object {
+                                                "backgroundColor": "#ffa8a8",
+                                              }
+                        }
+            >
+                        <div
+                                    className="group"
+                        >
+                                    <div
+                                                className="fieldName"
+                                    >
+                                                프로젝트명
+                                    </div>
+                                    <div
+                                                id="projectName"
+                                    >
+                                                알리안츠 프로젝트
+                                    </div>
+                        </div>
+                        <div
+                                    className="group"
+                        >
+                                    <div
+                                                className="fieldName"
+                                    >
+                                                기간
+                                    </div>
+                                    <div
+                                                id="projectPeriod"
+                                    >
+                                                2017-01-01
+                                                 - 
+                                                2018-01-01
+                                    </div>
+                        </div>
+                        <div
+                                    className="group inactive"
+                        >
+                                    <div
+                                                className="fieldName"
+                                    >
+                                                역할
+                                    </div>
+                                    <div
+                                                id="role"
+                                    />
+                        </div>
+                        <div
+                                    className="group false"
+                        >
+                                    <div
+                                                className="fieldName"
+                                    >
+                                                프로젝트 요약
+                                    </div>
+                                    <div
+                                                id="projectSummary"
+                                    >
+                                                간단소개
+                                    </div>
+                        </div>
+                        <div
+                                    className="group false"
+                        >
+                                    <div
+                                                className="fieldName"
+                                    >
+                                                프로젝트 상세
+                                    </div>
+                                    <div
+                                                id="projectDescription"
+                                    >
+                                                <span>
+                                                            자세한 소개
+                                                            <br />
+                                                </span>
+                                    </div>
+                        </div>
+                        <div
+                                    className="group false"
+                        >
+                                    <div
+                                                className="fieldName"
+                                    >
+                                                관련 링크
+                                    </div>
+                                    <a
+                                                href="www.al.com"
+                                                id="link"
+                                    >
+                                                www.al.com
+                                    </a>
+                        </div>
+                        <div
+                                    className="group false"
+                        >
+                                    <div
+                                                className="fieldName"
+                                    >
+                                                기술 스택
+                                    </div>
+                                    <div
+                                                id="techs"
+                                    >
+                                                <div
+                                                            className="badge badge-pill badge-info"
+                                                >
+                                                            java
+                                                </div>
+                                                <div
+                                                            className="badge badge-pill badge-info"
+                                                >
+                                                            oracle
+                                                </div>
+                                    </div>
+                        </div>
+            </div>
+</div>,
+        ],
+        "className": "item-card timeline width-100",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "pointer",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="triangle"
+                style={
+                                Object {
+                                                "borderRight": "2em solid #ffa8a8",
+                                              }
+                }
+/>,
+              <div
+                className="project"
+                style={
+                                Object {
+                                                "backgroundColor": "#ffa8a8",
+                                              }
+                }
+>
+                <div
+                                className="group"
+                >
+                                <div
+                                                className="fieldName"
+                                >
+                                                프로젝트명
+                                </div>
+                                <div
+                                                id="projectName"
+                                >
+                                                알리안츠 프로젝트
+                                </div>
+                </div>
+                <div
+                                className="group"
+                >
+                                <div
+                                                className="fieldName"
+                                >
+                                                기간
+                                </div>
+                                <div
+                                                id="projectPeriod"
+                                >
+                                                2017-01-01
+                                                 - 
+                                                2018-01-01
+                                </div>
+                </div>
+                <div
+                                className="group inactive"
+                >
+                                <div
+                                                className="fieldName"
+                                >
+                                                역할
+                                </div>
+                                <div
+                                                id="role"
+                                />
+                </div>
+                <div
+                                className="group false"
+                >
+                                <div
+                                                className="fieldName"
+                                >
+                                                프로젝트 요약
+                                </div>
+                                <div
+                                                id="projectSummary"
+                                >
+                                                간단소개
+                                </div>
+                </div>
+                <div
+                                className="group false"
+                >
+                                <div
+                                                className="fieldName"
+                                >
+                                                프로젝트 상세
+                                </div>
+                                <div
+                                                id="projectDescription"
+                                >
+                                                <span>
+                                                                자세한 소개
+                                                                <br />
+                                                </span>
+                                </div>
+                </div>
+                <div
+                                className="group false"
+                >
+                                <div
+                                                className="fieldName"
+                                >
+                                                관련 링크
+                                </div>
+                                <a
+                                                href="www.al.com"
+                                                id="link"
+                                >
+                                                www.al.com
+                                </a>
+                </div>
+                <div
+                                className="group false"
+                >
+                                <div
+                                                className="fieldName"
+                                >
+                                                기술 스택
+                                </div>
+                                <div
+                                                id="techs"
+                                >
+                                                <div
+                                                                className="badge badge-pill badge-info"
+                                                >
+                                                                java
+                                                </div>
+                                                <div
+                                                                className="badge badge-pill badge-info"
+                                                >
+                                                                oracle
+                                                </div>
+                                </div>
+                </div>
+</div>,
+            ],
+            "className": "flexbox",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "triangle",
+                "style": Object {
+                  "borderRight": "2em solid #ffa8a8",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="group"
+>
+                    <div
+                                        className="fieldName"
+                    >
+                                        프로젝트명
+                    </div>
+                    <div
+                                        id="projectName"
+                    >
+                                        알리안츠 프로젝트
+                    </div>
+</div>,
+                  <div
+                    className="group"
+>
+                    <div
+                                        className="fieldName"
+                    >
+                                        기간
+                    </div>
+                    <div
+                                        id="projectPeriod"
+                    >
+                                        2017-01-01
+                                         - 
+                                        2018-01-01
+                    </div>
+</div>,
+                  <div
+                    className="group inactive"
+>
+                    <div
+                                        className="fieldName"
+                    >
+                                        역할
+                    </div>
+                    <div
+                                        id="role"
+                    />
+</div>,
+                  <div
+                    className="group false"
+>
+                    <div
+                                        className="fieldName"
+                    >
+                                        프로젝트 요약
+                    </div>
+                    <div
+                                        id="projectSummary"
+                    >
+                                        간단소개
+                    </div>
+</div>,
+                  <div
+                    className="group false"
+>
+                    <div
+                                        className="fieldName"
+                    >
+                                        프로젝트 상세
+                    </div>
+                    <div
+                                        id="projectDescription"
+                    >
+                                        <span>
+                                                            자세한 소개
+                                                            <br />
+                                        </span>
+                    </div>
+</div>,
+                  <div
+                    className="group false"
+>
+                    <div
+                                        className="fieldName"
+                    >
+                                        관련 링크
+                    </div>
+                    <a
+                                        href="www.al.com"
+                                        id="link"
+                    >
+                                        www.al.com
+                    </a>
+</div>,
+                  <div
+                    className="group false"
+>
+                    <div
+                                        className="fieldName"
+                    >
+                                        기술 스택
+                    </div>
+                    <div
+                                        id="techs"
+                    >
+                                        <div
+                                                            className="badge badge-pill badge-info"
+                                        >
+                                                            java
+                                        </div>
+                                        <div
+                                                            className="badge badge-pill badge-info"
+                                        >
+                                                            oracle
+                                        </div>
+                    </div>
+</div>,
+                ],
+                "className": "project",
+                "style": Object {
+                  "backgroundColor": "#ffa8a8",
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="fieldName"
+>
+                        프로젝트명
+</div>,
+                      <div
+                        id="projectName"
+>
+                        알리안츠 프로젝트
+</div>,
+                    ],
+                    "className": "group",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "프로젝트명",
+                        "className": "fieldName",
+                      },
+                      "ref": null,
+                      "rendered": "프로젝트명",
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "알리안츠 프로젝트",
+                        "id": "projectName",
+                      },
+                      "ref": null,
+                      "rendered": "알리안츠 프로젝트",
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="fieldName"
+>
+                        기간
+</div>,
+                      <div
+                        id="projectPeriod"
+>
+                        2017-01-01
+                         - 
+                        2018-01-01
+</div>,
+                    ],
+                    "className": "group",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "기간",
+                        "className": "fieldName",
+                      },
+                      "ref": null,
+                      "rendered": "기간",
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "2017-01-01",
+                          " - ",
+                          "2018-01-01",
+                        ],
+                        "id": "projectPeriod",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "2017-01-01",
+                        " - ",
+                        "2018-01-01",
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="fieldName"
+>
+                        역할
+</div>,
+                      <div
+                        id="role"
+/>,
+                    ],
+                    "className": "group inactive",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "역할",
+                        "className": "fieldName",
+                      },
+                      "ref": null,
+                      "rendered": "역할",
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": undefined,
+                        "id": "role",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="fieldName"
+>
+                        프로젝트 요약
+</div>,
+                      <div
+                        id="projectSummary"
+>
+                        간단소개
+</div>,
+                    ],
+                    "className": "group false",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "프로젝트 요약",
+                        "className": "fieldName",
+                      },
+                      "ref": null,
+                      "rendered": "프로젝트 요약",
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "간단소개",
+                        "id": "projectSummary",
+                      },
+                      "ref": null,
+                      "rendered": "간단소개",
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="fieldName"
+>
+                        프로젝트 상세
+</div>,
+                      <div
+                        id="projectDescription"
+>
+                        <span>
+                                                자세한 소개
+                                                <br />
+                        </span>
+</div>,
+                    ],
+                    "className": "group false",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "프로젝트 상세",
+                        "className": "fieldName",
+                      },
+                      "ref": null,
+                      "rendered": "프로젝트 상세",
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span>
+                            자세한 소개
+                            <br />
+</span>,
+                        ],
+                        "id": "projectDescription",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": "0",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              "자세한 소개",
+                              <br />,
+                            ],
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "자세한 소개",
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {},
+                              "ref": null,
+                              "rendered": null,
+                              "type": "br",
+                            },
+                          ],
+                          "type": "span",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="fieldName"
+>
+                        관련 링크
+</div>,
+                      <a
+                        href="www.al.com"
+                        id="link"
+>
+                        www.al.com
+</a>,
+                    ],
+                    "className": "group false",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "관련 링크",
+                        "className": "fieldName",
+                      },
+                      "ref": null,
+                      "rendered": "관련 링크",
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "www.al.com",
+                        "href": "www.al.com",
+                        "id": "link",
+                      },
+                      "ref": null,
+                      "rendered": "www.al.com",
+                      "type": "a",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="fieldName"
+>
+                        기술 스택
+</div>,
+                      <div
+                        id="techs"
+>
+                        <div
+                                                className="badge badge-pill badge-info"
+                        >
+                                                java
+                        </div>
+                        <div
+                                                className="badge badge-pill badge-info"
+                        >
+                                                oracle
+                        </div>
+</div>,
+                    ],
+                    "className": "group false",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "기술 스택",
+                        "className": "fieldName",
+                      },
+                      "ref": null,
+                      "rendered": "기술 스택",
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <div
+                            className="badge badge-pill badge-info"
+>
+                            java
+</div>,
+                          <div
+                            className="badge badge-pill badge-info"
+>
+                            oracle
+</div>,
+                        ],
+                        "id": "techs",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": "0",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "java",
+                            "className": "badge badge-pill badge-info",
+                          },
+                          "ref": null,
+                          "rendered": "java",
+                          "type": "div",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "1",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "oracle",
+                            "className": "badge badge-pill badge-info",
+                          },
+                          "ref": null,
+                          "rendered": "oracle",
+                          "type": "div",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="item-card timeline width-100"
+>
+          <div
+                    className="pointer"
+          />
+          <div
+                    className="flexbox"
+          >
+                    <div
+                              className="triangle"
+                              style={
+                                        Object {
+                                                  "borderRight": "2em solid #ffa8a8",
+                                                }
+                              }
+                    />
+                    <div
+                              className="project"
+                              style={
+                                        Object {
+                                                  "backgroundColor": "#ffa8a8",
+                                                }
+                              }
+                    >
+                              <div
+                                        className="group"
+                              >
+                                        <div
+                                                  className="fieldName"
+                                        >
+                                                  프로젝트명
+                                        </div>
+                                        <div
+                                                  id="projectName"
+                                        >
+                                                  알리안츠 프로젝트
+                                        </div>
+                              </div>
+                              <div
+                                        className="group"
+                              >
+                                        <div
+                                                  className="fieldName"
+                                        >
+                                                  기간
+                                        </div>
+                                        <div
+                                                  id="projectPeriod"
+                                        >
+                                                  2017-01-01
+                                                   - 
+                                                  2018-01-01
+                                        </div>
+                              </div>
+                              <div
+                                        className="group inactive"
+                              >
+                                        <div
+                                                  className="fieldName"
+                                        >
+                                                  역할
+                                        </div>
+                                        <div
+                                                  id="role"
+                                        />
+                              </div>
+                              <div
+                                        className="group false"
+                              >
+                                        <div
+                                                  className="fieldName"
+                                        >
+                                                  프로젝트 요약
+                                        </div>
+                                        <div
+                                                  id="projectSummary"
+                                        >
+                                                  간단소개
+                                        </div>
+                              </div>
+                              <div
+                                        className="group false"
+                              >
+                                        <div
+                                                  className="fieldName"
+                                        >
+                                                  프로젝트 상세
+                                        </div>
+                                        <div
+                                                  id="projectDescription"
+                                        >
+                                                  <span>
+                                                            자세한 소개
+                                                            <br />
+                                                  </span>
+                                        </div>
+                              </div>
+                              <div
+                                        className="group false"
+                              >
+                                        <div
+                                                  className="fieldName"
+                                        >
+                                                  관련 링크
+                                        </div>
+                                        <a
+                                                  href="www.al.com"
+                                                  id="link"
+                                        >
+                                                  www.al.com
+                                        </a>
+                              </div>
+                              <div
+                                        className="group false"
+                              >
+                                        <div
+                                                  className="fieldName"
+                                        >
+                                                  기술 스택
+                                        </div>
+                                        <div
+                                                  id="techs"
+                                        >
+                                                  <div
+                                                            className="badge badge-pill badge-info"
+                                                  >
+                                                            java
+                                                  </div>
+                                                  <div
+                                                            className="badge badge-pill badge-info"
+                                                  >
+                                                            oracle
+                                                  </div>
+                                        </div>
+                              </div>
+                    </div>
+          </div>
+</div>,
+        "className": "flexbox width-100",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="pointer"
+/>,
+            <div
+              className="flexbox"
+>
+              <div
+                            className="triangle"
+                            style={
+                                          Object {
+                                                        "borderRight": "2em solid #ffa8a8",
+                                                      }
+                            }
+              />
+              <div
+                            className="project"
+                            style={
+                                          Object {
+                                                        "backgroundColor": "#ffa8a8",
+                                                      }
+                            }
+              >
+                            <div
+                                          className="group"
+                            >
+                                          <div
+                                                        className="fieldName"
+                                          >
+                                                        프로젝트명
+                                          </div>
+                                          <div
+                                                        id="projectName"
+                                          >
+                                                        알리안츠 프로젝트
+                                          </div>
+                            </div>
+                            <div
+                                          className="group"
+                            >
+                                          <div
+                                                        className="fieldName"
+                                          >
+                                                        기간
+                                          </div>
+                                          <div
+                                                        id="projectPeriod"
+                                          >
+                                                        2017-01-01
+                                                         - 
+                                                        2018-01-01
+                                          </div>
+                            </div>
+                            <div
+                                          className="group inactive"
+                            >
+                                          <div
+                                                        className="fieldName"
+                                          >
+                                                        역할
+                                          </div>
+                                          <div
+                                                        id="role"
+                                          />
+                            </div>
+                            <div
+                                          className="group false"
+                            >
+                                          <div
+                                                        className="fieldName"
+                                          >
+                                                        프로젝트 요약
+                                          </div>
+                                          <div
+                                                        id="projectSummary"
+                                          >
+                                                        간단소개
+                                          </div>
+                            </div>
+                            <div
+                                          className="group false"
+                            >
+                                          <div
+                                                        className="fieldName"
+                                          >
+                                                        프로젝트 상세
+                                          </div>
+                                          <div
+                                                        id="projectDescription"
+                                          >
+                                                        <span>
+                                                                      자세한 소개
+                                                                      <br />
+                                                        </span>
+                                          </div>
+                            </div>
+                            <div
+                                          className="group false"
+                            >
+                                          <div
+                                                        className="fieldName"
+                                          >
+                                                        관련 링크
+                                          </div>
+                                          <a
+                                                        href="www.al.com"
+                                                        id="link"
+                                          >
+                                                        www.al.com
+                                          </a>
+                            </div>
+                            <div
+                                          className="group false"
+                            >
+                                          <div
+                                                        className="fieldName"
+                                          >
+                                                        기술 스택
+                                          </div>
+                                          <div
+                                                        id="techs"
+                                          >
+                                                        <div
+                                                                      className="badge badge-pill badge-info"
+                                                        >
+                                                                      java
+                                                        </div>
+                                                        <div
+                                                                      className="badge badge-pill badge-info"
+                                                        >
+                                                                      oracle
+                                                        </div>
+                                          </div>
+                            </div>
+              </div>
+</div>,
+          ],
+          "className": "item-card timeline width-100",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "pointer",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="triangle"
+                  style={
+                                    Object {
+                                                      "borderRight": "2em solid #ffa8a8",
+                                                    }
+                  }
+/>,
+                <div
+                  className="project"
+                  style={
+                                    Object {
+                                                      "backgroundColor": "#ffa8a8",
+                                                    }
+                  }
+>
+                  <div
+                                    className="group"
+                  >
+                                    <div
+                                                      className="fieldName"
+                                    >
+                                                      프로젝트명
+                                    </div>
+                                    <div
+                                                      id="projectName"
+                                    >
+                                                      알리안츠 프로젝트
+                                    </div>
+                  </div>
+                  <div
+                                    className="group"
+                  >
+                                    <div
+                                                      className="fieldName"
+                                    >
+                                                      기간
+                                    </div>
+                                    <div
+                                                      id="projectPeriod"
+                                    >
+                                                      2017-01-01
+                                                       - 
+                                                      2018-01-01
+                                    </div>
+                  </div>
+                  <div
+                                    className="group inactive"
+                  >
+                                    <div
+                                                      className="fieldName"
+                                    >
+                                                      역할
+                                    </div>
+                                    <div
+                                                      id="role"
+                                    />
+                  </div>
+                  <div
+                                    className="group false"
+                  >
+                                    <div
+                                                      className="fieldName"
+                                    >
+                                                      프로젝트 요약
+                                    </div>
+                                    <div
+                                                      id="projectSummary"
+                                    >
+                                                      간단소개
+                                    </div>
+                  </div>
+                  <div
+                                    className="group false"
+                  >
+                                    <div
+                                                      className="fieldName"
+                                    >
+                                                      프로젝트 상세
+                                    </div>
+                                    <div
+                                                      id="projectDescription"
+                                    >
+                                                      <span>
+                                                                        자세한 소개
+                                                                        <br />
+                                                      </span>
+                                    </div>
+                  </div>
+                  <div
+                                    className="group false"
+                  >
+                                    <div
+                                                      className="fieldName"
+                                    >
+                                                      관련 링크
+                                    </div>
+                                    <a
+                                                      href="www.al.com"
+                                                      id="link"
+                                    >
+                                                      www.al.com
+                                    </a>
+                  </div>
+                  <div
+                                    className="group false"
+                  >
+                                    <div
+                                                      className="fieldName"
+                                    >
+                                                      기술 스택
+                                    </div>
+                                    <div
+                                                      id="techs"
+                                    >
+                                                      <div
+                                                                        className="badge badge-pill badge-info"
+                                                      >
+                                                                        java
+                                                      </div>
+                                                      <div
+                                                                        className="badge badge-pill badge-info"
+                                                      >
+                                                                        oracle
+                                                      </div>
+                                    </div>
+                  </div>
+</div>,
+              ],
+              "className": "flexbox",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "triangle",
+                  "style": Object {
+                    "borderRight": "2em solid #ffa8a8",
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="group"
+>
+                      <div
+                                            className="fieldName"
+                      >
+                                            프로젝트명
+                      </div>
+                      <div
+                                            id="projectName"
+                      >
+                                            알리안츠 프로젝트
+                      </div>
+</div>,
+                    <div
+                      className="group"
+>
+                      <div
+                                            className="fieldName"
+                      >
+                                            기간
+                      </div>
+                      <div
+                                            id="projectPeriod"
+                      >
+                                            2017-01-01
+                                             - 
+                                            2018-01-01
+                      </div>
+</div>,
+                    <div
+                      className="group inactive"
+>
+                      <div
+                                            className="fieldName"
+                      >
+                                            역할
+                      </div>
+                      <div
+                                            id="role"
+                      />
+</div>,
+                    <div
+                      className="group false"
+>
+                      <div
+                                            className="fieldName"
+                      >
+                                            프로젝트 요약
+                      </div>
+                      <div
+                                            id="projectSummary"
+                      >
+                                            간단소개
+                      </div>
+</div>,
+                    <div
+                      className="group false"
+>
+                      <div
+                                            className="fieldName"
+                      >
+                                            프로젝트 상세
+                      </div>
+                      <div
+                                            id="projectDescription"
+                      >
+                                            <span>
+                                                                  자세한 소개
+                                                                  <br />
+                                            </span>
+                      </div>
+</div>,
+                    <div
+                      className="group false"
+>
+                      <div
+                                            className="fieldName"
+                      >
+                                            관련 링크
+                      </div>
+                      <a
+                                            href="www.al.com"
+                                            id="link"
+                      >
+                                            www.al.com
+                      </a>
+</div>,
+                    <div
+                      className="group false"
+>
+                      <div
+                                            className="fieldName"
+                      >
+                                            기술 스택
+                      </div>
+                      <div
+                                            id="techs"
+                      >
+                                            <div
+                                                                  className="badge badge-pill badge-info"
+                                            >
+                                                                  java
+                                            </div>
+                                            <div
+                                                                  className="badge badge-pill badge-info"
+                                            >
+                                                                  oracle
+                                            </div>
+                      </div>
+</div>,
+                  ],
+                  "className": "project",
+                  "style": Object {
+                    "backgroundColor": "#ffa8a8",
+                  },
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <div
+                          className="fieldName"
+>
+                          프로젝트명
+</div>,
+                        <div
+                          id="projectName"
+>
+                          알리안츠 프로젝트
+</div>,
+                      ],
+                      "className": "group",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "프로젝트명",
+                          "className": "fieldName",
+                        },
+                        "ref": null,
+                        "rendered": "프로젝트명",
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "알리안츠 프로젝트",
+                          "id": "projectName",
+                        },
+                        "ref": null,
+                        "rendered": "알리안츠 프로젝트",
+                        "type": "div",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <div
+                          className="fieldName"
+>
+                          기간
+</div>,
+                        <div
+                          id="projectPeriod"
+>
+                          2017-01-01
+                           - 
+                          2018-01-01
+</div>,
+                      ],
+                      "className": "group",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "기간",
+                          "className": "fieldName",
+                        },
+                        "ref": null,
+                        "rendered": "기간",
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            "2017-01-01",
+                            " - ",
+                            "2018-01-01",
+                          ],
+                          "id": "projectPeriod",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "2017-01-01",
+                          " - ",
+                          "2018-01-01",
+                        ],
+                        "type": "div",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <div
+                          className="fieldName"
+>
+                          역할
+</div>,
+                        <div
+                          id="role"
+/>,
+                      ],
+                      "className": "group inactive",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "역할",
+                          "className": "fieldName",
+                        },
+                        "ref": null,
+                        "rendered": "역할",
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": undefined,
+                          "id": "role",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "div",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <div
+                          className="fieldName"
+>
+                          프로젝트 요약
+</div>,
+                        <div
+                          id="projectSummary"
+>
+                          간단소개
+</div>,
+                      ],
+                      "className": "group false",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "프로젝트 요약",
+                          "className": "fieldName",
+                        },
+                        "ref": null,
+                        "rendered": "프로젝트 요약",
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "간단소개",
+                          "id": "projectSummary",
+                        },
+                        "ref": null,
+                        "rendered": "간단소개",
+                        "type": "div",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <div
+                          className="fieldName"
+>
+                          프로젝트 상세
+</div>,
+                        <div
+                          id="projectDescription"
+>
+                          <span>
+                                                    자세한 소개
+                                                    <br />
+                          </span>
+</div>,
+                      ],
+                      "className": "group false",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "프로젝트 상세",
+                          "className": "fieldName",
+                        },
+                        "ref": null,
+                        "rendered": "프로젝트 상세",
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span>
+                              자세한 소개
+                              <br />
+</span>,
+                          ],
+                          "id": "projectDescription",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": "0",
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": Array [
+                                "자세한 소개",
+                                <br />,
+                              ],
+                            },
+                            "ref": null,
+                            "rendered": Array [
+                              "자세한 소개",
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "host",
+                                "props": Object {},
+                                "ref": null,
+                                "rendered": null,
+                                "type": "br",
+                              },
+                            ],
+                            "type": "span",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <div
+                          className="fieldName"
+>
+                          관련 링크
+</div>,
+                        <a
+                          href="www.al.com"
+                          id="link"
+>
+                          www.al.com
+</a>,
+                      ],
+                      "className": "group false",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "관련 링크",
+                          "className": "fieldName",
+                        },
+                        "ref": null,
+                        "rendered": "관련 링크",
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "www.al.com",
+                          "href": "www.al.com",
+                          "id": "link",
+                        },
+                        "ref": null,
+                        "rendered": "www.al.com",
+                        "type": "a",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <div
+                          className="fieldName"
+>
+                          기술 스택
+</div>,
+                        <div
+                          id="techs"
+>
+                          <div
+                                                    className="badge badge-pill badge-info"
+                          >
+                                                    java
+                          </div>
+                          <div
+                                                    className="badge badge-pill badge-info"
+                          >
+                                                    oracle
+                          </div>
+</div>,
+                      ],
+                      "className": "group false",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "기술 스택",
+                          "className": "fieldName",
+                        },
+                        "ref": null,
+                        "rendered": "기술 스택",
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <div
+                              className="badge badge-pill badge-info"
+>
+                              java
+</div>,
+                            <div
+                              className="badge badge-pill badge-info"
+>
+                              oracle
+</div>,
+                          ],
+                          "id": "techs",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": "0",
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "java",
+                              "className": "badge badge-pill badge-info",
+                            },
+                            "ref": null,
+                            "rendered": "java",
+                            "type": "div",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": "1",
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "oracle",
+                              "className": "badge badge-pill badge-info",
+                            },
+                            "ref": null,
+                            "rendered": "oracle",
+                            "type": "div",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

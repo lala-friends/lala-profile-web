@@ -1,24 +1,26 @@
 import React, {Component} from 'react';
-import DeveloperDetail from './DeveloperItem';
-import Service from '../utils/Service';
+import DeveloperItem from './DeveloperItem';
+import HTTP from '../utils/http-common';
 import './Developers.css';
 
 class Developers extends Component {
     constructor(props) {
         super(props);
-        this.service = new Service();
         this.state = {
-            members: []
+            developers: []
         };
-        this.service.get('/developers', (status, res) => {
+    }
+
+    componentDidMount() {
+        HTTP.get('/developers').then(response => {
             this.setState({
-                members: res
+                developers: response.data
             });
         });
     }
 
     handleClick = () => {
-        this.props.history.push("/developer/new");
+        this.props.history.push('/developer/new');
     }
   
     render() {
@@ -28,8 +30,8 @@ class Developers extends Component {
                     <button className='btn btn-light add-button' onClick={this.handleClick}>Add Developer</button>
                 </div>
                 <div className='flexbox'>
-                    {this.state.members.map((profile, i) => (
-                            <DeveloperDetail key={i}
+                    {this.state.developers.map((profile, i) => (
+                            <DeveloperItem key={i}
                                 id={profile.personId}
                                 thumbnail={profile.imageUrl}
                                 name={profile.name}

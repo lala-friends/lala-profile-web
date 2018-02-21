@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import Comment from './Comment';
 import FormComment from './FormComment';
-import Service from '../utils/Service';
+import HTTP from '../utils/http-common';
 import './ProductDetail.css';
 import ProductDetailCard from './ProductDetailCard';
 
 class ProductDetail extends Component {
     constructor(props) {
         super(props);
-        this.service = new Service();
         this.state = {
             id: '',
             name: '',
@@ -19,17 +18,20 @@ class ProductDetail extends Component {
             details: [],
             comments: []
         };
+    }
 
-        this.service.get(`/product/${this.props.match.params.name}`, (status, response) => {
+    componentDidMount() {
+        HTTP.get(`/product/${this.props.match.params.name}`).then(response => {
+            const product = response.data
             this.setState({
-                id: response.productId,
-                name: response.name,
-                introduce: response.introduce,
-                imageUrl: response.imageUrl,
-                color: response.repColor,
-                techs: response.techs,
-                details: response.productDetails,
-                comments: response.comments
+                id: product.productId,
+                name: product.name,
+                introduce: product.introduce,
+                imageUrl: product.imageUrl,
+                color: product.repColor,
+                techs: product.techs,
+                details: product.productDetails,
+                comments: product.comments
             });
         });
     }
@@ -37,13 +39,13 @@ class ProductDetail extends Component {
         return (
             <div className="detail container">
                 <div className="summary">
-                    <div className="title">
+                    <div id='productName' className="title">
                         {this.state.name}
                     </div>
-                    <div className="description">
+                    <div id='productDescription' className="description">
                         {this.state.introduce}
                     </div>
-                    <div className="tags">
+                    <div id='tags' className="tags">
                         {
                             this.state.techs.map((tech, key) => {
                                 return (<span key={key}>#{tech}</span>);
@@ -53,7 +55,7 @@ class ProductDetail extends Component {
                 </div>
 
                 {
-                    this.state.details.map((detail, key) => 
+                    this.state.details && this.state.details.map((detail, key) => 
                             <ProductDetailCard key={key} 
                                 title={detail.title} 
                                 description={detail.description} 
@@ -63,7 +65,7 @@ class ProductDetail extends Component {
                 
                 <FormComment/>
                 {
-                    this.state.comments.map((comment, key) => <Comment key={key}
+                    this.state.comments && this.state.comments.map((comment, key) => <Comment key={key}
                                         email={comment.email}
                                         comment={comment.message}
                                         date={comment.regDt}/>

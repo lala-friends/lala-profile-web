@@ -27,7 +27,7 @@ class FormFile extends Component {
     render() {
         return (
             <div className="formFile">
-                <input id={`upload_file + ${this.props.id}`} type="file" onChange={this.handleChange} />
+                <input id={`upload_file_${this.props.id}`} type="file" onChange={this.handleChange} />
                 <input type="text" placeholder="file name" value={this.state.name} readOnly/>
                 <label className="btn btn-light upload-button" htmlFor={`upload_file + ${this.props.id}`} >upload</label>
             </div>

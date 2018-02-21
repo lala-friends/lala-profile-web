@@ -8,19 +8,21 @@ const ProductItem = (props) => {
         props.history.push(`/product/${props.name}`);
     };
     return (
-        <div className="project card" onClick={handleClick}>
-            <img alt='제품 컨셉 이미지' className="thumbnail" src={props.imageUrl}/>
+        <div id='productCard' className="project card" onClick={handleClick}>
+            <img id='productImage' alt='제품 컨셉 이미지' className="thumbnail" src={props.imageUrl}/>
             <div className="card-body">
-                <div className="text-align-center name">{props.name}</div>
-                <div className="description">{props.description}</div>
+                <div id='productName' className="text-align-center name">{props.name}</div>
+                <div id='productDescription' className="description">{props.description}</div>
                 <hr/>
                 <div>Developers</div>
                 <div className="flexbox developer">
+                    <div id='developers'>
                     {
                         props.developers.map((developer, i) =>
                             <img alt='개발자 이미지' src={developer.imageUrl} title={developer.name} key={i}/>
                         )
                     }
+                    </div>
                 </div>
             </div>
         </div>

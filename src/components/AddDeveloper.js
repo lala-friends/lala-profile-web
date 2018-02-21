@@ -3,8 +3,9 @@ import './AddDeveloper.css';
 import FormFile from './FormFile';
 import ColorPalette from './ColorPalette';
 import {rgbToHexa} from '../utils/StyleUtil';
+import HTTP from '../utils/http-common';
 
-class AddDeveloer extends Component {
+class AddDeveloper extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,32 +23,32 @@ class AddDeveloer extends Component {
 
     handleCancle = () => {
         this.props.history.goBack();
-    }
+    };
     handleSave = () => {
-        console.log(this.state);
-    }
-    change = (propertyName, e) => {
+        HTTP.post('/developer', this.state).then(response => {
+
+        });
+    };
+
+    updateState = (propertyName, property) => {
         const state = {};
-        state[propertyName] = e.target.value;
+        state[propertyName] = property;
         this.setState(state);
     }
+    change = (propertyName, e) => {
+        this.updateState(propertyName, e.target.value);
+    };
     changeTags = (e) => {
         const tags = new Set(e.target.value.split(' '));
-        this.setState({
-            tags: [...tags]
-        });
-    }
+        this.updateState('tags', [...tags]);
+    };
     updateImage = (url) => {
-        this.setState({
-            imageUrl: url
-        });
-    }
+        this.updateState('imageUrl', url);
+    };
     changeColor = (e) => {
         const hexa = rgbToHexa(e.target.style.backgroundColor);
-        this.setState({
-            color: hexa
-        });
-    } 
+        this.updateState('color', hexa);
+    };
 
     render() {
         return (
@@ -55,20 +56,20 @@ class AddDeveloer extends Component {
                 <div className="title">Add Developer</div>
                 <div className='group'>
                     <div className='fieldName'>이름</div>
-                    <input type='text' onChange={this.change.bind(this, 'name')}/>
+                    <input id='name' type='text' onChange={this.change.bind(this, 'name')}/>
                 </div>
                 <div className='group'>
                     <div className='fieldName'>이메일</div>
-                    <input type='text' onChange={this.change.bind(this, 'email')}/>
+                    <input id='email' type='text' onChange={this.change.bind(this, 'email')}/>
                 </div>
                 <div className='group'>
                     <div className='fieldName'>한줄소개</div>
-                    <input type='text' onChange={this.change.bind(this, 'introduce')}/>
+                    <input id='introduce' type='text' onChange={this.change.bind(this, 'introduce')}/>
                 </div>
 
                 <div className="group">
                     <div className="fieldName">Tags</div>
-                    <input type="text" onChange={this.changeTags}/>
+                    <input id='tags' type="text" onChange={this.changeTags}/>
                     <div>
                         {
                             this.state.tags.map((text, i) => (
@@ -93,23 +94,23 @@ class AddDeveloer extends Component {
 
                 <div className='group'>
                     <div className='fieldName'>Blog</div>
-                    <input type='text' onChange={this.change.bind(this, 'blog')}/>
+                    <input id='blog' type='text' onChange={this.change.bind(this, 'blog')}/>
                 </div>
                 <div className='group'>
                     <div className='fieldName'>Github</div>
-                    <input type='text' onChange={this.change.bind(this, 'github')}/>
+                    <input id='github' type='text' onChange={this.change.bind(this, 'github')}/>
                 </div>
                 <div className='group'>
                     <div className='fieldName'>Facebook</div>
-                    <input type='text' onChange={this.change.bind(this, 'facebook')}/>
+                    <input id='facebook' type='text' onChange={this.change.bind(this, 'facebook')}/>
                 </div>
                 <div className='flexbox btnGroup'>
-                    <button className='btn btn-light' onClick={this.handleCancle}>취소하기</button>
-                    <button className='btn btn-light' onClick={this.handleSave}>저장하기</button>
+                    <button id='cancel' className='btn btn-light' onClick={this.handleCancle}>취소하기</button>
+                    <button id='save' className='btn btn-light' onClick={this.handleSave}>저장하기</button>
                 </div>
             </div>
         );
     }
 }
 
-export default AddDeveloer;
+export default AddDeveloper;

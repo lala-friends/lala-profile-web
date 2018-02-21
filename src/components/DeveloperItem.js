@@ -23,7 +23,7 @@ class DeveloperItem extends Component {
 
     render() { 
         return (
-            <div className="person card" onClick={this.moveToDeveloperDetail}>
+            <div id='developerCard' className="person card" onClick={this.moveToDeveloperDetail}>
                 <div id='color' className="background" style={{backgroundColor: `${this.props.color}`}} />
                 <div className="thumbnail-background" />
                 <img alt='개발자 프로필 이미지' id='thumbnail' className="thumbnail" src={this.props.thumbnail} />
@@ -54,15 +54,14 @@ class DeveloperItem extends Component {
                 </div>
                 <div id="products" className={`${!this.state.isShow && 'inactive'}`}>
                     {
-                        (!this.props.products)? null:
-                            (this.props.products.map((product, key) => (
-                                <a href={`/products/${product.productId}`} className="project-item" key={key}>
-                                    <img alt='제품 컨셉 이미지' src={product.imageUrl} />
-                                    <div>
-                                        {product.name}
-                                    </div>
-                                </a>
-                                )
+
+                        this.props.products && this.props.products.map((product, key) => (
+                            <a href={`/product/${product.productId}`} className="project-item" key={key}>
+                                <img alt='제품 컨셉 이미지' src={product.imageUrl} />
+                                <div>
+                                    {product.name}
+                                </div>
+                            </a>
                             )
                         )
                     }
@@ -79,9 +78,9 @@ DeveloperItem.propTypes = {
     introduce: PropTypes.string,
     blog: PropTypes.string,
     github: PropTypes.string,
-    face: PropTypes.string,
+    facebook: PropTypes.string,
     color: PropTypes.string,
-    project: PropTypes.array
+    products: PropTypes.array
 };
 
 export default DeveloperItem;

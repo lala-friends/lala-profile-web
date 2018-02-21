@@ -2,22 +2,22 @@ import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
 import './Products.css';
 import ProductItem from './ProductItem';
-import Service from '../utils/Service';
+import HTTP from '../utils/http-common';
 class Products extends Component{
     constructor(props) {
         super(props);
-        this.service = new Service();
-        this.state ={
+        this.state = {
             products: []
         };
-        this.service.get('/products', (status, response) => {
-            this.setState({products: response});
+    }
+    componentDidMount() {
+        HTTP.get('/products').then(response => {
+            this.setState({products: response.data});
         });
     }
     handleClick = () => {
         this.props.history.push("/product/new");
     };
-
     render() {
         return (
             <div className="product">

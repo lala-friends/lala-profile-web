@@ -12,31 +12,38 @@ const ProjectCard = (props) => {
                     <div className='project' style={{backgroundColor: `${props.color}`}}>
                         <div className='group'>
                             <div className='fieldName'>프로젝트명</div>
-                            <div>{props.name}</div>
+                            <div id='projectName'>{props.name}</div>
                         </div>
                         <div className='group'>
                             <div className='fieldName'>기간</div>
-                            <div>{dateYYYYMMDD(props.from)} - {dateYYYYMMDD(props.to)}</div>
+                            <div id='projectPeriod'>{dateYYYYMMDD(props.from)} - {dateYYYYMMDD(props.to)}</div>
                         </div>
                         <div className={`group ${!props.role && 'inactive'}`}>
                             <div className='fieldName'>역할</div>
-                            <div>{props.role}</div>
+                            <div id='role'>{props.role}</div>
                         </div>
                         <div className={`group ${!props.introduce && 'inactive'}`}>
                             <div className='fieldName'>프로젝트 요약</div>
-                            <div>{props.introduce}</div>
+                            <div id='projectSummary'>{props.introduce}</div>
                         </div>
                         <div className={`group ${!props.description && 'inactive'}`}>
                             <div className='fieldName'>프로젝트 상세</div>
-                            <div>{props.description.split('\n').map((line, key) => <span key={key}>{line}<br/></span>)}</div>
+                            <div id='projectDescription'>{props.description && props.description.split('\n').map((line, key) => <span key={key}>{line}<br/></span>)}</div>
                         </div>
-                        <div className={`group ${props.techs.length===0 && 'inactive'}`}>
+                        <div className={`group ${!props.link && 'inactive'}`}>
+                            <div className='fieldName'>관련 링크</div>
+                            <a id='link' href={props.link}>{props.link}</a>
+                        </div>
+                        
+                        <div className={`group ${!props.techs && 'inactive'}`}>
                             <div className='fieldName'>기술 스택</div>
+                            <div id='techs'>
                             {
-                                props.techs.map((tech, key) => (
+                                props.techs && props.techs.map((tech, key) => (
                                     <div className="badge badge-pill badge-info" key={key}>{tech}</div>
                                 ))
                             }
+                            </div>
                         </div>
                     </div>
                 </div>

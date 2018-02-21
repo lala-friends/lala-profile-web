@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "bootstrap": "^4.0.0",
+    "core-js": "^2.5.3",
     "firebase": "^4.9.1",
     "mdi": "^2.1.19",
     "prop-types": "^15.6.0",
@@ -17,14 +18,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "coverage": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject",
+    "sinon": "^4.3.0"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^22.1.4",
-    "jest-cli": "^22.1.4",
-    "sinon": "^4.2.2"
+    "sinon": "^4.3.0"
   }
 }

@@ -1,54 +1,62 @@
 import React from 'react';
-import {MemoryRouter} from 'react-router';
-import Enzyme from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import sinon from 'sinon';
+// React 16 Enzyme adapter
+Enzyme.configure({ adapter: new Adapter() });
 
 import AddProduct from '../components/AddProduct';
-import FormProject from '../components/FormProduct';
-import FormItem from '../components/FormItem';
+import sinon from 'sinon';
 import HTTP from '../utils/http-common';
 
-Enzyme.configure({adapter: new Adapter()});
-
-describe('<AddProduct />', () => {
+describe('AddProduct 컴포넌트', () => {
     let sandbox;
-    let wrapper;
     beforeEach(() => {
-        sandbox = sinon.sandbox.create();
-        wrapper = Enzyme.shallow(<AddProduct/>);
-        wrapper.setState({
-            name: '',
-            description: '',
-            tags: [],
-            image: '',
-            items: [{
-                id: '',
-                title: '',
-                description: '',
-                image: ''
-            }]
+        sandbox = sinon.createSandbox();
+    });
+    test('changeProduct가 호출되면, params로 받아온 product정보를 갱신한다.', () => {
+        const wrapper = shallow(<AddProduct/>);
+
+        wrapper.instance().changeProduct({
+            id: 1,
+            title: 'product title',
+            description: 'product description',
+            imageUrl: 'www.imageUrl.com'
         });
+
+        expect(wrapper.state('id')).toEqual(1);
+        expect(wrapper.state('title')).toEqual('product title');
+        expect(wrapper.state('description')).toEqual('product description');
+        expect(wrapper.state('imageUrl')).toEqual('www.imageUrl.com');
     });
 
-    test('AddProduct 렌더링시, state정보가 화면에 보여진다.', () => {
-        expect(wrapper.find(FormProject)).toHaveLength(1);
-        expect(wrapper.find(FormItem)).toHaveLength(1);
-    });
-
-    test('add card 버튼 클릭시, FormItem이 하나 추가된다.', () => {
+    test('add버튼이 클릭되면, 설명 추가를 위한 FormItem컴포넌트가 추가된다.', () => {
+        const wrapper = shallow(<AddProduct/>);
+        wrapper.setState({
+            items: []
+        });
         wrapper.find('#add-button').simulate('click');
-        expect(wrapper.find(FormItem)).toHaveLength(2);
+
+        expect(wrapper.state('items').length).toEqual(1);
     });
 
-    test('저장하기 버튼 클릭시, 저장 요청한다.', () => {
+    test('취소버튼이 클릭되면, 이전페이지로 돌아가는 goBack함수가 호출된다.', () => {
+        const goBack = jest.fn();
+        const wrapper = shallow(<AddProduct history={{goBack: goBack}}/>);
+
+        wrapper.find('#cancel').simulate('click');
+
+        expect(goBack).toHaveBeenCalled();
+    });
+
+    test('저장버튼이 클릭되면, 이전페이지로 돌아가는 goBack함수가 호출된다.', () => {
         const stub = sandbox.stub(HTTP, 'post');
-        wrapper.find('#save-button').simulate('click');
+        stub.withArgs('/product').returns(Promise.resolve({}));
+        const wrapper = shallow(<AddProduct />);
 
-        expect(stub.withArgs('/product/new', wrapper.state()).calledOnce).toEqual(true);
+        wrapper.find('#save').simulate('click');
+
+        expect(stub.called).toEqual(true);
     });
-
-    //TODO: 취소버튼 클릭시 테스트
 
     afterEach(() => {
         sandbox.restore();

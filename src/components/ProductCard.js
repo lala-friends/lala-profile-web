@@ -1,36 +1,43 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-const ProductCard = (props) => {
-    return (
-        <div className='card'> 
-            <div className='image-wrapper'>
-                <img alt='제품 컨셉 이미지' className='square-image' src={props.imageUrl} />
-            </div>
+class ProductCard extends Component {
+    moveToProductDetail = () => {
+        this.props.history.push(`/product/${this.props.name}`);
+    }
+    render() {
+        return (
+            <div className='card' onClick={this.moveToProductDetail}> 
+                <div className='image-wrapper'>
+                    <img id='imageUrl' alt='제품 컨셉 이미지' className='square-image' src={this.props.imageUrl} />
+                </div>
 
-            <div className='item-title'>{props.name}</div>
-            <div className='group'>
-                <div className='fieldName'>한줄소개</div>
-                <div>{props.introduce}</div>
-            </div>
-            <div className={`group ${props.techs.length===0&&'inactive'}`}>
-                <div className='fieldName'>기술 스택</div>
-                {
-                    props.techs.map((tech, key) => (
-                        <div className="badge badge-pill badge-info" key={key}>{tech}</div>
-                    ))
-                }
-            </div>
-            <div className={`group ${props.role && 'inactive'}`}>
-                <div className='fieldName'>역할</div>
-                <div>{props.role}</div>
-            </div>
+                <div id='productName' className='item-title'>{this.props.name}</div>
+                <div className={`group ${!this.props.introduce&&'inactive'}`}>
+                    <div className='fieldName'>한줄소개</div>
+                    <div id='productSummary'>{this.props.introduce}</div>
+                </div>
+                <div className={`group ${!this.props.techs&&'inactive'}`}>
+                    <div className='fieldName'>기술 스택</div>
+                    <div id='techs'>
+                    {
+                        this.props.techs && this.props.techs.map((tech, key) => (
+                            <div className="badge badge-pill badge-info" key={key}>{tech}</div>
+                        ))
+                    }
+                    </div>
+                </div>
+                <div className={`group ${!this.props.role && 'inactive'}`}>
+                    <div className='fieldName'>역할</div>
+                    <div id='role'>{this.props.role}</div>
+                </div>
 
-        </div>
-    )
+            </div>
+        )
+    }
 }
 
-ProductCard.PropTypes = {
+ProductCard.propTypes = {
     imageUrl: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     introduce: PropTypes.string,

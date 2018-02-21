@@ -11,36 +11,34 @@ class FormProduct extends Component {
         this.state = {
             name: '',
             description: '',
-            tags: [],
+            techs: [],
             imageUrl: '',
-            color: '#ffa8a8'
+            color: '#ffa8a8',
+            developers: []
         }
     }
 
-    change = (propertyName, e) => {
+    changeItem = (propertyName, property) => {
         const state = {};
-        state[propertyName] = e.target.value;
-        this.setState(state, this.props.changeProject(this.state));
+        state[propertyName] = property;
+        this.setState(state, this.props.changeProduct(state));
     }
-
+    change = (propertyName, e) => {
+        this.changeItem(propertyName, e.target.value);
+    }
     changeTags(e) {
-        const tags = new Set(e.target.value.split(' '));
-        this.setState({
-            tags: [...tags]
-        }, this.props.changeProject(this.state));
+        const techs = new Set(e.target.value.split(' '));
+        this.changeItem('techs', [...techs]);
     }
-
-    updateImage(url) {
-        this.setState({
-            imageUrl: url
-        }, this.props.changeProject(this.state));
+    updateImage = (url) => {
+        this.changeItem('imageUrl', url);
     }
 
     changeColor = (e) => {
         const hexa = rgbToHexa(e.target.style.backgroundColor);
         this.setState({
             color: hexa
-        }, this.props.changeProject(this.state));
+        }, this.props.changeProduct(this.state));
     }
     
     render() {
@@ -48,40 +46,44 @@ class FormProduct extends Component {
             <div className="formProduct">
                 <div className="group">
                     <div className="fieldName">Product Name</div>
-                    <input type="text" value={this.state.name} onChange={this.change.bind(this, 'name')}/>
+                    <input id='productName' type="text" value={this.state.name} onChange={this.change.bind(this, 'name')}/>
                 </div>
                 <div className="group">
                     <div className="fieldName">Product Description</div>
-                    <input type="text" value={this.state.description} onChange={this.change.bind(this, 'description')}/>
+                    <input  id='productDescription' type="text" value={this.state.description} onChange={this.change.bind(this, 'description')}/>
                 </div>
 
                 <div className="group">
-                    <div className="fieldName">Tags</div>
-                    <input type="text" onChange={this.changeTags.bind(this)}/>
-                    <div>
+                    <div className="fieldName">Techs</div>
+                    <input id='productTechs' type="text" onChange={this.changeTags.bind(this)}/>
+                    <div id='techBadges'>
                         {
-                            this.state.tags.map((text, i) => (
+                            this.state.techs.map((text, i) => (
                                 <div className="badge badge-pill badge-info" key={i}>{text}</div>
                             ))
                         }
                     </div>
                 </div>
                 <div className="group">
-                    <div className="fieldName">Project Image</div>
+                    <div className="fieldName">Product Image</div>
                     {
-                        this.state.imageUrl && <div className='flexbox img-wrapper'><img alt='제품 컨셉 이미지' src={this.state.imageUrl}/></div>
+                        this.state.imageUrl && 
+                        (<div className='flexbox img-wrapper'>
+                            <img id='productImg' alt='제품 컨셉 이미지' src={this.state.imageUrl}/>
+                        </div>)
                     }
-                    <FormFile id="project" updateImage={this.updateImage.bind(this)}/>
+                    
+                    <FormFile id="project" updateImage={this.updateImage}/>
                 </div>
                 <div className="group">
-                    <div className="fieldName">Project Color</div>
+                    <div className="fieldName">Product Color</div>
                     <div className="colors">
                         <ColorPalette color={this.state.color} changeColor={this.changeColor}/>
                     </div>
                 </div>
                 <div className="group">
                     <div className="fieldName">Developers</div>
-                    <input type="text"/>
+                    <input id='developer' type="text"/>
                 </div>
             </div>
         )
@@ -89,7 +91,7 @@ class FormProduct extends Component {
 }
 
 FormProduct.propTypes = {
-    changeProject: PropTypes.func.isRequired
+    changeProduct: PropTypes.func.isRequired
 }
 
 export default FormProduct;
