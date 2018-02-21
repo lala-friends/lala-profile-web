@@ -31,22 +31,26 @@ class FormItem extends Component {
                     <div className="fieldName">Description Image</div>
                     <div className="flexbox">
                     {
-                        this.state.image? <img alt='제품의 상세 설명을 위한 이미지' src={this.state.image}/>: null
+                        !!this.state.imageUrl && <img id='imageUrl' alt='제품의 상세 설명을 위한 이미지' src={this.state.imageUrl}/>
                     }
                     </div>
                     <FormFile id={this.props.changeItem.id} updateImage={this.updateImage.bind(this)}/>
                 </div>
                 <div className="group">
                     <div className="fieldName">Description Title</div>
-                    <input type="text" onChange={this.change.bind(this, 'title')}/>
+                    <input id='title' type="text" onChange={this.change.bind(this, 'title')}/>
                 </div>
                 <div className="group">
                     <div className="fieldName">Description Detail</div>
-                    <input type="text" onChange={this.change.bind(this, 'description')}/>
+                    <input id='description' type="text" onChange={this.change.bind(this, 'description')}/>
                 </div>
             </div>
         )
     }
+}
+
+FormItem.propTypes = {
+    changeItem: PropTypes.object.isRequired
 }
 
 export default FormItem;
