@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './FormComment.css';
 
+import HTTP from '../utils/http-common';
+
 class FormComment extends Component {
     constructor(props) {
         super(props);
@@ -11,34 +13,24 @@ class FormComment extends Component {
         }
     }
 
-    handleChangeComment = (e) => {
-        this.setState({
-            comment: e.target.value
-        });
-    };
-
-    handleChangeEmail = (e) => {
-        this.setState({
-            email: e.target.value
-        });
-    };
+    change = (propertyName, e) => {
+        const state = {};
+        state[propertyName] = e.target.value;
+        this.setState(state);
+    }
+    
     handleClick = () => {
-        console.log('NOT YET');
-        // this.setState({
-        //     date: new Date()
-        // }, () => {
-        //     HTTP.post('/products/1/comments', this.state, (status, response) => {
-        //
-        //     });
-        // })
+        HTTP.post('/comment', this.state).then(response => {
+
+        });
     };
     render() {
         return (
             <div className="formComment">
-                <textarea className="comment" onChange={this.handleChangeComment}/>
+                <textarea id='comment' className="comment" onChange={this.change.bind(this, 'comment')}/>
                 <div className="flexbox">
-                    <input type="text" placeholder="email" onChange={this.handleChangeEmail}/>
-                    <button onClick={this.handleClick} className="btn btn-light">save</button>
+                    <input id='email' type="text" placeholder="email" onChange={this.change.bind(this, 'email')}/>
+                    <button id='save' onClick={this.handleClick} className="btn btn-light">save</button>
                 </div>
             </div>
         );
