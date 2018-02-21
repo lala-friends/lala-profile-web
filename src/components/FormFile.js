@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './FormFile.css';
-import Storage from '../utils/Storage';
+import {uploadImage} from '../utils/Storage';
 import PropTypes from 'prop-types';
 
 class FormFile extends Component {
@@ -11,16 +11,17 @@ class FormFile extends Component {
         }
     }
     handleChange = (e) => {
-        if(!e.target.files[0]) {
+        if(!e.target.files || e.target.files.length===0) {
             return;
         }
-
+        
+        const file = e.target.files[0];
+    
         this.setState({
-            name: e.target.files[0].name
+            name: file.name
         });
 
-        const storage = new Storage();
-        storage.uploadImage(e.target.files).then(snapshot => {
+        uploadImage(file).then(snapshot => {
             this.props.updateImage(snapshot.downloadURL);
         });
     }
