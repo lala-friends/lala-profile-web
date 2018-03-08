@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
 import './Products.css';
-import ProductItem from './ProductItem';
 import HTTP from '../utils/http-common';
+import ProductItem from '../components/ProductItem';
+
 class Products extends Component{
     constructor(props) {
         super(props);

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import DeveloperItem from './DeveloperItem';
 import HTTP from '../utils/http-common';
 import './Developers.css';
+import DeveloperItem from '../components/DeveloperItem';
 
 class Developers extends Component {
     constructor(props) {

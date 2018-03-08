@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withRouter} from "react-router-dom";
-import './Products.css'
 
 const ProductItem = (props) => {
     const handleClick = () => {
@@ -9,7 +8,7 @@ const ProductItem = (props) => {
     };
     return (
         <div id='productCard' className="project card" onClick={handleClick}>
-            <img id='productImage' alt='제품 컨셉 이미지' className="thumbnail" src={props.imageUrl}/>
+            <img id='productImage' alt='제품 컨셉 이미지s' className="thumbnail" src={props.imageUrl}/>
             <div className="card-body">
                 <div id='productName' className="text-align-center name">{props.name}</div>
                 <div id='productDescription' className="description">{props.description}</div>

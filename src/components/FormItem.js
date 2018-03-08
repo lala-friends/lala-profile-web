@@ -6,22 +6,14 @@ import FormFile from './FormFile';
 class FormItem extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            title: '',
-            description: '',
-            imageUrl: ''
-        }
     }
     change = (propertyName, e) => {
-        const state = {};
-        state[propertyName] = e.target.value;
-        this.setState(state);
+        const item = {};
+        item[propertyName] = e.target.value;
+        this.props.changeItem(item, this.props.id);
     }
-
     updateImage(url) {
-        this.setState({
-            imageUrl: url
-        });
+        this.props.changeItem({ imageUrl: url }, this.props.id);
     }
     render() {
         return (
@@ -34,7 +26,7 @@ class FormItem extends Component {
                         !!this.state.imageUrl && <img id='imageUrl' alt='제품의 상세 설명을 위한 이미지' src={this.state.imageUrl}/>
                     }
                     </div>
-                    <FormFile id={this.props.changeItem.id} updateImage={this.updateImage.bind(this)}/>
+                    <FormFile id={`product_item_${this.props.id}`} updateImage={this.updateImage.bind(this)}/>
                 </div>
                 <div className="group">
                     <div className="fieldName">Description Title</div>

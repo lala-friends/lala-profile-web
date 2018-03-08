@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './AddDeveloper.css';
-import FormFile from './FormFile';
-import ColorPalette from './ColorPalette';
-import {rgbToHexa} from '../utils/StyleUtil';
+import { rgbToHexa } from '../utils/StyleUtil';
 import HTTP from '../utils/http-common';
+import FormFile from '../components/FormFile';
+import ColorPalette from '../components/ColorPalette';
 
 class AddDeveloper extends Component {
     constructor(props) {

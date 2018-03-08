@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import HTTP from '../utils/http-common';
 import './DeveloperDetail.css';
-import ProjectCard from './ProjectCard';
-import ProductCard from './ProductCard';
+import ProjectCard from '../components/ProjectCard';
+import ProductCard from '../components/ProductCard';
 
 class DeveloperDetail extends Component {
     constructor(props) {

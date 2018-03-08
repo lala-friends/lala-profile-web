@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
-import Home from './components/Home';
-import Developers from './components/Developers';
-import DeveloperDetail from './components/DeveloperDetail';
-import AddDeveloper from './components/AddDeveloper';
-import Products from './components/Products';
-import ProductDetail from './components/ProductDetail';
-import AddProduct from './components/AddProduct';
-import NoMatch from './components/NoMatch';
+import Header from './containers/Header';
+import Home from './containers/Home';
+import Developers from './containers/Developers';
+import DeveloperDetail from './containers/DeveloperDetail';
+import AddDeveloper from './containers/AddDeveloper';
+import Products from './containers/Products';
+import ProductDetail from './containers/ProductDetail';
+import AddProduct from './containers/AddProduct';
+import NoMatch from './containers/NoMatch';
 
 class App extends Component {
     render() {
@@ -25,7 +25,6 @@ class App extends Component {
                         <Route exact path="/products" component={Products}/>
                         <Route exact path="/product/new" component={AddProduct}/>
                         <Route path="/product/:name" component={ProductDetail}/>
-
                         <Route component={NoMatch}/>
                     </Switch>
                 </div>

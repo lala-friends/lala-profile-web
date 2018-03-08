@@ -7,7 +7,7 @@ class ProductCard extends Component {
     }
     render() {
         return (
-            <div className='card' onClick={this.moveToProductDetail}> 
+            <div id='productCard' className='card' onClick={this.moveToProductDetail}> 
                 <div className='image-wrapper'>
                     <img id='imageUrl' alt='제품 컨셉 이미지' className='square-image' src={this.props.imageUrl} />
                 </div>

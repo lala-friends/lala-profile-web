@@ -15,7 +15,6 @@ describe('ProductCard', () => {
                                     techs={['android']}
                                     role='개발'/>);
 
-        expect(wrapper).toMatchSnapshot();
         expect(wrapper.find('#imageUrl').props().src).toEqual('www.imageUrl.com');
         expect(wrapper.find('#productName').text()).toEqual('lala-clipping');
         expect(wrapper.find('#productSummary').text()).toEqual('간단 소개');
@@ -32,5 +31,17 @@ describe('ProductCard', () => {
         expect(wrapper.find('#techs').parent().props().className).toContain('inactive');
         expect(wrapper.find('#productSummary').parent().props().className).toContain('inactive');
         expect(wrapper.find('#role').parent().props().className).toContain('inactive');
+    });
+
+    test('프로덕트카드를 클릭하면 프로덕트 상세페이지로 이동한다.', () => {
+        const push = jest.fn();
+        const wrapper = shallow(<ProductCard name='lala-clipping' 
+                                            imageUrl='www.imageUrl.com' 
+                                            history={{push: push}}
+        />);
+
+        wrapper.find('#productCard').simulate('click');
+
+        expect(push).toHaveBeenCalledWith('/product/lala-clipping');
     });
 });

@@ -10,10 +10,10 @@ class FormProduct extends Component {
         super(props);
         this.state = {
             name: '',
-            description: '',
+            introduce: '',
             techs: [],
+            repColor: '#ffa8a8',
             imageUrl: '',
-            color: '#ffa8a8',
             developers: []
         }
     }
@@ -37,7 +37,7 @@ class FormProduct extends Component {
     changeColor = (e) => {
         const hexa = rgbToHexa(e.target.style.backgroundColor);
         this.setState({
-            color: hexa
+            repColor: hexa
         }, this.props.changeProduct(this.state));
     }
     
@@ -50,7 +50,7 @@ class FormProduct extends Component {
                 </div>
                 <div className="group">
                     <div className="fieldName">Product Description</div>
-                    <input  id='productDescription' type="text" value={this.state.description} onChange={this.change.bind(this, 'description')}/>
+                    <input  id='productDescription' type="text" value={this.state.introduce} onChange={this.change.bind(this, 'introduce')}/>
                 </div>
 
                 <div className="group">
@@ -73,12 +73,12 @@ class FormProduct extends Component {
                         </div>)
                     }
                     
-                    <FormFile id="project" updateImage={this.updateImage}/>
+                    <FormFile id="product" updateImage={this.updateImage}/>
                 </div>
                 <div className="group">
                     <div className="fieldName">Product Color</div>
                     <div className="colors">
-                        <ColorPalette color={this.state.color} changeColor={this.changeColor}/>
+                        <ColorPalette color={this.state.repColor} changeColor={this.changeColor}/>
                     </div>
                 </div>
                 <div className="group">

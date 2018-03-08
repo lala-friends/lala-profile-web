@@ -1,41 +1,52 @@
 import React, {Component} from 'react';
 import './AddProduct.css';
-import FormProduct from './FormProduct';
-import FormItem from './FormItem';
 import HTTP from '../utils/http-common';
+import FormProduct from '../components/FormProduct';
+import FormItem from '../components/FormItem';
 
 class AddProduct extends Component {
     constructor(props) {
         super(props);
         this.state = {
             name: '',
-            description: '',
+            introduce: '',
             techs: [],
+            repColor: '',
             imageUrl: '',
-            items: []
+            developers: [],
+            details: []
         };
     }
     handleCancle = () => {
         this.props.history.goBack();
     };
     handleSave = () => {
-        HTTP.post('/product', this.state).then(response => {
+        console.log(this.state);
+        // HTTP.post('/product', this.state).then(response => {
 
-        });
+        // });
     };
     handleAdd = () => {
-        const items = this.state.items;
-        items.push({
-            id: '',
+        const details = this.state.details;
+        details.push({
             title: '',
             description: '',
             imageUrl: ''
         });
-        this.setState({items: items});
+        this.setState({details});
     };
     changeProduct = (product) => {
         this.setState(product);
     };
+    changeItem = (item, index) => {
+        const details = this.state.details;
+        const result = details.slice(0, index);
+        result.push(item);
+        result.
+        this.setState({
+            details: details
+        })
+    }
     render() {
         return (
             <div className="add-product container">
@@ -45,9 +56,8 @@ class AddProduct extends Component {
                 </div>
                 <div className="margin-bottom-1">
                 {
-                    this.state.items.map((x, i) => {
-                        x.id = i.toString();
-                        return (<FormItem key={i} changeItem={x}/>)
+                    this.state.details.map((x, i) => {
+                        return (<FormItem key={i} id={i} changeItem={this.changeItem}/>)
                     })
                 }
                 </div>
