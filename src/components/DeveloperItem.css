@@ -89,7 +89,9 @@
 
 .person .project-item {
     padding: 0.5em 1em;
-    border-top: 1px solid rgba(0,0,0,.125);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    border-left: 1px solid rgba(0,0,0,.125);
+    border-right: 1px solid rgba(0,0,0,.125);
     display: flex;
     justify-content: flex-start;
     font-size: 14px;
@@ -132,3 +134,42 @@
     width: 15px;
     height: 15px;
 }
+
+.person .card {
+    z-index: 999;
+    margin-bottom: 0;
+}
+
+.person #products {
+    position: relative;
+    bottom: 0;
+    margin-left: 1em;
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+}
+
+.slide-in {
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+}
+.slide-out {
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+}
+@keyframes slide-in {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0%); }
+}
+@-webkit-keyframes slide-in {
+    0% { transform: translateY(-100%); }
+    100% { -webkit-transform: translateY(0%); }
+}   
+@keyframes slide-out {
+    0% { transform: translateY(0%); }
+    100% { transform: translateY(-100%); }
+}
+@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translateY(0%); }
+    100% { -webkit-transform: translateY(-100%); }
+}
+

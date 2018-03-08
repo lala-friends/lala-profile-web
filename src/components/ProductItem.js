@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 import './ProductItem.css'
 
 class ProductItem extends Component {
-    handleClick = () => {
+    moveToProduct = () => {
         this.props
             .history
             .push(`/product/${this.props.name}`);
@@ -24,7 +24,7 @@ class ProductItem extends Component {
     }
     render() {
         return (
-            <div id='productCard' className="project card" onClick={() => this.handleClick}>
+            <div id='productCard' className="project card" onClick={() => this.moveToProduct()}>
                 <div className='thumbnail-wrapper'>
                     <img
                         id='productImage'
@@ -32,8 +32,8 @@ class ProductItem extends Component {
                         className="thumbnail"
                         src={this.props.imageUrl}/>
                     <div className='button-group'>
-                        <button onClick={() => this.editProduct}><img src={require('../images/ic_delete.png')}/></button>
-                        <button onClick={() => this.deleteProduct}><img src={require('../images/ic_edit.png')}/></button>
+                        <button onClick={() => this.editProduct()}><img alt='edit 버튼' src={require('../images/ic_delete.png')}/></button>
+                        <button onClick={() => this.deleteProduct()}><img alt='delete 버튼' src={require('../images/ic_edit.png')}/></button>
                     </div>
                 </div>
                 <div className="card-body">

@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 class ProductCard extends Component {
     moveToProductDetail = () => {
+        console.log('click');
         this.props.history.push(`/product/${this.props.name}`);
     }
     render() {
         return (
-            <div id='productCard' className='card' onClick={this.moveToProductDetail}> 
+            <div id='productCard' className='card' onClick={() => this.moveToProductDetail()}> 
                 <div className='image-wrapper'>
                     <img id='imageUrl' alt='제품 컨셉 이미지' className='square-image' src={this.props.imageUrl} />
                 </div>

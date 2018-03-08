@@ -18,7 +18,10 @@ class DeveloperItem extends Component {
     };
 
     moveToDeveloperDetail = () => {
-        this.props.history.push(`/developer/${this.props.name}`);
+        this
+            .props
+            .history
+            .push(`/developer/${this.props.name}`);
     }
     editDeveloper = (e) => {
         console.log('edit');
@@ -28,19 +31,32 @@ class DeveloperItem extends Component {
         console.log('delete');
         e.stopPropagation();
     }
-    render() { 
+    render() {
         return (
-            <div id='developerCard' className="person card" onClick={this.moveToDeveloperDetail}>
-                <div id='color' className="background" style={{backgroundColor: `${this.props.color}`}} >
+            <div className="person">
+            <div
+                id='developerCard'
+                className="card"
+                onClick={this.moveToDeveloperDetail}>
+                <div
+                    id='color'
+                    className="background"
+                    style={{
+                    backgroundColor: `${this.props.color}`
+                }}>
                     <div className="thumbnail-background">
-                        <img alt='개발자 프로필 이미지' id='thumbnail' className="thumbnail" src={this.props.thumbnail} />
+                        <img
+                            alt='개발자 프로필 이미지'
+                            id='thumbnail'
+                            className="thumbnail"
+                            src={this.props.thumbnail}/>
                     </div>
                     <div className='button-group'>
-                        <button onClick={this.editDeveloper}><img src={require('../images/ic_edit.png')} /></button>
-                        <button onClick={this.deleteDeveloper}><img src={require('../images/ic_delete.png')} /></button>
+                        <button onClick={this.editDeveloper}><img alt='edit 버튼' src={require('../images/ic_edit.png')}/></button>
+                        <button onClick={this.deleteDeveloper}><img alt='delete 버튼' src={require('../images/ic_delete.png')}/></button>
                     </div>
                 </div>
-                
+
                 <div className="card-body">
                     <div className="text-align-center">
                         <div id='name' className="name">{this.props.name}</div>
@@ -50,35 +66,39 @@ class DeveloperItem extends Component {
                     <hr/>
                     <div className='flexbox'>
                         <a id='blog' className="social-button border-right" href={this.props.blog}>
-                            <i className="mdi mdi-blogger" />
+                            <i className="mdi mdi-blogger"/>
                             <div>blog</div>
                         </a>
                         <a id='github' className="social-button border-right" href={this.props.github}>
-                            <i className="mdi mdi-github-face" />
+                            <i className="mdi mdi-github-face"/>
                             <div>github</div>
                         </a>
-                        <a id='facebook' className="social-button"  href={this.props.facebook}>
-                            <i className="mdi mdi-facebook" />
+                        <a id='facebook' className="social-button" href={this.props.facebook}>
+                            <i className="mdi mdi-facebook"/>
                             <div>facebook</div>
                         </a>
                     </div>
                 </div>
-                <div id="product-button" className="project-button flexbox" onClick={this.handleClickProducts}>
+                <div
+                    id="product-button"
+                    className="project-button flexbox"
+                    onClick={this.handleClickProducts}>
                     <span>Products</span>
                 </div>
-                <div id="products" className={`${!this.state.isShow && 'inactive'}`}>
-                    {
-
-                        this.props.products && this.props.products.map((product, key) => (
+            </div>
+            <div id="products" className={`${ !this.state.isShow? 'slide-out':'slide-in'}`}>
+                    {this.props.products && this
+                        .props
+                        .products
+                        .map((product, key) => (
                             <a href={`/product/${product.productId}`} className="project-item" key={key}>
-                                <img alt='제품 컨셉 이미지' src={product.imageUrl} />
+                                <img alt='제품 컨셉 이미지' src={product.imageUrl}/>
                                 <div>
                                     {product.name}
                                 </div>
                             </a>
-                            )
-                        )
-                    }
+                        ))
+}
                 </div>
             </div>
         )
