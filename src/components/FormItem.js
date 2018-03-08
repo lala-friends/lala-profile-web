@@ -6,6 +6,9 @@ import FormFile from './FormFile';
 class FormItem extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            imageUrl: ''
+        }
     }
     change = (propertyName, e) => {
         const item = {};
@@ -42,7 +45,7 @@ class FormItem extends Component {
 }
 
 FormItem.propTypes = {
-    changeItem: PropTypes.object.isRequired
+    changeItem: PropTypes.func.isRequired
 }
 
 export default FormItem;

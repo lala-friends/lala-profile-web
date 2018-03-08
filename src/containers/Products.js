@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
-import './Products.css';
 import HTTP from '../utils/http-common';
 import ProductItem from '../components/ProductItem';
 

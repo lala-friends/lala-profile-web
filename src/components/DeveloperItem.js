@@ -20,13 +20,27 @@ class DeveloperItem extends Component {
     moveToDeveloperDetail = () => {
         this.props.history.push(`/developer/${this.props.name}`);
     }
-
+    editDeveloper = (e) => {
+        console.log('edit');
+        e.stopPropagation();
+    }
+    deleteDeveloper = (e) => {
+        console.log('delete');
+        e.stopPropagation();
+    }
     render() { 
         return (
             <div id='developerCard' className="person card" onClick={this.moveToDeveloperDetail}>
-                <div id='color' className="background" style={{backgroundColor: `${this.props.color}`}} />
-                <div className="thumbnail-background" />
-                <img alt='개발자 프로필 이미지' id='thumbnail' className="thumbnail" src={this.props.thumbnail} />
+                <div id='color' className="background" style={{backgroundColor: `${this.props.color}`}} >
+                    <div className="thumbnail-background">
+                        <img alt='개발자 프로필 이미지' id='thumbnail' className="thumbnail" src={this.props.thumbnail} />
+                    </div>
+                    <div className='button-group'>
+                        <button onClick={this.editDeveloper}><img src={require('../images/ic_edit.png')} /></button>
+                        <button onClick={this.deleteDeveloper}><img src={require('../images/ic_delete.png')} /></button>
+                    </div>
+                </div>
+                
                 <div className="card-body">
                     <div className="text-align-center">
                         <div id='name' className="name">{this.props.name}</div>

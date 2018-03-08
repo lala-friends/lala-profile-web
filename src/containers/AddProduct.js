@@ -22,9 +22,9 @@ class AddProduct extends Component {
     };
     handleSave = () => {
         console.log(this.state);
-        // HTTP.post('/product', this.state).then(response => {
-
-        // });
+        HTTP.post('/products', JSON.stringify(this.state)).then(response => {
+            console.log('success');
+        });
     };
     handleAdd = () => {
         const details = this.state.details;
@@ -40,12 +40,10 @@ class AddProduct extends Component {
     };
     changeItem = (item, index) => {
         const details = this.state.details;
-        const result = details.slice(0, index);
-        result.push(item);
-        result.
+        details[index] = item;
         this.setState({
             details: details
-        })
+        });
     }
     render() {
         return (
