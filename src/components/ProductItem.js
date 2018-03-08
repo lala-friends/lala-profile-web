@@ -1,14 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withRouter} from "react-router-dom";
+import {withRouter} from 'react-router-dom';
 
 const ProductItem = (props) => {
     const handleClick = () => {
         props.history.push(`/product/${props.name}`);
     };
+    const editProduct = (e) => {
+        console.log('edit');
+        e.stopPropagation();
+    }
+    const deleteProduct = (e) => {
+        console.log('delete');
+        e.stopPropagation();
+    }
     return (
         <div id='productCard' className="project card" onClick={handleClick}>
-            <img id='productImage' alt='제품 컨셉 이미지s' className="thumbnail" src={props.imageUrl}/>
+            <div className='thumbnail-wrapper'>
+                <img id='productImage' alt='제품 컨셉 이미지' className="thumbnail" src={props.imageUrl}/>
+                <div className='button-group'>
+                    <button onClick={editProduct}><img src={require('../images/ic_delete.png')}/></button>
+                    <button onClick={deleteProduct}><img src={require('../images/ic_edit.png')}/></button>
+                </div>
+            </div>
             <div className="card-body">
                 <div id='productName' className="text-align-center name">{props.name}</div>
                 <div id='productDescription' className="description">{props.description}</div>

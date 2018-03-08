@@ -6,7 +6,31 @@
     max-width: 300px;
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
-
+.product .thumbnail-wrapper {
+    position: relative;
+}
+.product .button-group {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+}
+.product .button-group button {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #fff;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.product .button-group button:focus {
+    outline: none;
+}
+.product .button-group img {
+    width: 20px;
+    height: 20px;
+}
 .product .name {
     font-size: 20px;
     color: #495057;
