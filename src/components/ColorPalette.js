@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {colorPalette} from '../utils/StyleUtil';
-
+import './ColorPalette.css'
 const ColorPalette = (props) => {
     return (
-        <div>
+        <div className='colorPalette'>
             {colorPalette.map((color, key) => {
                 return (
                     <div key={key} className='color' style={{backgroundColor: `${color}`}} onClick={props.changeColor}>

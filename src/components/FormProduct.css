@@ -26,19 +26,6 @@
     margin-bottom: 0.5em;
 }
 
-.formProduct .colors {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 0.5em;
-}
-
-.formProduct .color {
-    min-width: 2em;
-    height: 2em;
-    text-align: center;
-}
-
 .formProduct i {
     line-height: 2em;
     color: #fff;
