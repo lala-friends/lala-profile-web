@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import HTTP from '../utils/http-common';
-import './ProductDetail.css';
 import ProductDetailCard from '../components/ProductDetailCard';
 import Comment from '../components/Comment';
 import FormComment from '../components/FormComment';
+import './ProductDetail.css';
 
 class ProductDetail extends Component {
     constructor(props) {

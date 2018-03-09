@@ -32,22 +32,28 @@ class ProductItem extends Component {
                         className="thumbnail"
                         src={this.props.imageUrl}/>
                     <div className='button-group'>
-                        <button onClick={() => this.editProduct()}><img alt='edit 버튼' src={require('../images/ic_delete.png')}/></button>
-                        <button onClick={() => this.deleteProduct()}><img alt='delete 버튼' src={require('../images/ic_edit.png')}/></button>
+                        <button onClick={(e) => this.editProduct(e)}><img alt='edit 버튼' src={require('../images/ic_delete.png')}/></button>
+                        <button onClick={(e) => this.deleteProduct(e)}><img alt='delete 버튼' src={require('../images/ic_edit.png')}/></button>
                     </div>
                 </div>
                 <div className="card-body">
                     <div id='productName' className="text-align-center name">{this.props.name}</div>
-                    <div id='productDescription' className="description">{this.props.description}</div>
-                    <hr/>
-                    <div>Developers</div>
-                    <div className="flexbox developer">
-                        <div id='developers' className='developers'>
-                            {this.props
-                                .developers
-                                .map((developer, i) => <img alt='개발자 이미지' onClick={() => this.moveToDeveloper(developer.name)} src={developer.imageUrl} title={developer.name} key={i}/>)}
-                        </div>
-                    </div>
+                    <div id='productDescription' className="description">{this.props.description}</div>                    
+                    {
+                        this.props.developers.length > 0 && (
+                            <div>
+                                <hr/>
+                                <div>Developers</div>
+                                <div className='flexbox developer'>
+                                    <div id='developers' className='developers'>
+                                        {this.props
+                                            .developers
+                                            .map((developer, i) => <img alt='개발자 이미지' onClick={() => this.moveToDeveloper(developer.name)} src={developer.imageUrl} title={developer.name} key={i}/>)}
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }                    
                 </div>
             </div>
         );

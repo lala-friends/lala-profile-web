@@ -6,5 +6,5 @@ export default axios.create({
     baseURL: baseURL,
     httpsAgent: new https.Agent({
         rejectUnauthorized: false
-    })
+    }),
 });

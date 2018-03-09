@@ -3,6 +3,8 @@ import './AddProduct.css';
 import HTTP from '../utils/http-common';
 import FormProduct from '../components/FormProduct';
 import FormItem from '../components/FormItem';
+import DraggableImpl from '../components/DraggableImpl';
+import querystring from 'querystring'
 
 class AddProduct extends Component {
     constructor(props) {
@@ -21,19 +23,17 @@ class AddProduct extends Component {
         this.props.history.goBack();
     };
     handleSave = () => {
-        console.log(this.state);
-        HTTP.post('/products', JSON.stringify(this.state)).then(response => {
+        HTTP.post('/products', querystring.stringify(this.state)).then(response => {
             console.log('success');
         });
     };
     handleAdd = () => {
-        const details = this.state.details;
-        details.push({
+        this.setState({details: this.state.details.concat({
+            id: this.state.details.length+1,
             title: '',
             description: '',
             imageUrl: ''
-        });
-        this.setState({details});
+        })});
     };
     changeProduct = (product) => {
         this.setState(product);
@@ -41,6 +41,7 @@ class AddProduct extends Component {
     changeItem = (item, index) => {
         const details = this.state.details;
         details[index] = item;
+       
         this.setState({
             details: details
         });
@@ -53,11 +54,7 @@ class AddProduct extends Component {
                     <FormProduct changeProduct={this.changeProduct}/>
                 </div>
                 <div className="margin-bottom-1">
-                {
-                    this.state.details.map((x, i) => {
-                        return (<FormItem key={i} id={i} changeItem={this.changeItem}/>)
-                    })
-                }
+                    <DraggableImpl details={this.state.details} changeItem={(item, index) => this.changeItem(item, index)}/>
                 </div>
                 <div id="formCard" />
                 <div className="flexbox margin-bottom-3">

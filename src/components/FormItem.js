@@ -16,12 +16,21 @@ class FormItem extends Component {
         this.props.changeItem(item, this.props.id);
     }
     updateImage(url) {
-        this.props.changeItem({ imageUrl: url }, this.props.id);
+        this.setState({
+            imageUrl: url
+        }, () => this.props.changeItem({ imageUrl: url }, this.props.id));
+    }
+    deleteCard = (e) => {
+        console.log('deleteCard');
+        e.stopPropagation();
     }
     render() {
         return (
-            <div className="formItem">
-                <div className="title">Description Card</div>
+            <div className="formItem" style={[this.props.style]}>
+                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5em'}}>
+                    <div>Description Card #{`${this.props.id+1}`} </div>
+                    <img onClick={(e) => this.deleteCard(e)} src={require('../images/ic_delete_black.png')} />
+                </div>
                 <div className='group'>
                     <div className="fieldName">Description Image</div>
                     <div className="flexbox">
