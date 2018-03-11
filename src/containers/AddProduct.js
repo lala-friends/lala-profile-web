@@ -16,7 +16,8 @@ class AddProduct extends Component {
             repColor: '',
             imageUrl: '',
             developers: [],
-            details: []
+            details: [],
+            count: 1
         };
     }
     handleCancle = () => {
@@ -28,24 +29,21 @@ class AddProduct extends Component {
         });
     };
     handleAdd = () => {
-        this.setState({details: this.state.details.concat({
-            id: this.state.details.length+1,
-            title: '',
-            description: '',
-            imageUrl: ''
-        })});
+        this.setState({
+            details: this.state.details.concat({
+                id: this.state.count,
+                title: '',
+                description: '',
+                imageUrl: ''
+            }),
+            count: this.state.count+1
+        });
     };
     changeProduct = (product) => {
+        console.log(product);
         this.setState(product);
     };
-    changeItem = (item, index) => {
-        const details = this.state.details;
-        details[index] = item;
-       
-        this.setState({
-            details: details
-        });
-    }
+
     render() {
         return (
             <div className="add-product container">
@@ -54,7 +52,7 @@ class AddProduct extends Component {
                     <FormProduct changeProduct={this.changeProduct}/>
                 </div>
                 <div className="margin-bottom-1">
-                    <DraggableImpl details={this.state.details} changeItem={(item, index) => this.changeItem(item, index)}/>
+                    <DraggableImpl items={this.state.details} changeItems={(items) => this.changeProduct(items)}/>
                 </div>
                 <div id="formCard" />
                 <div className="flexbox margin-bottom-3">

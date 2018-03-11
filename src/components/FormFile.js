@@ -7,7 +7,7 @@ class FormFile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ''
+            name: props.name
         }
     }
     handleChange = (e) => {

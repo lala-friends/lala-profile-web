@@ -1,5 +1,4 @@
 .formItem {
-    margin-bottom: 1em;
     background: #f8f9fa;
     padding: 1em;
 }
@@ -39,3 +38,6 @@
     margin-bottom: 1em;
 }
 
+.delete-button {
+    cursor: pointer;
+}
