@@ -44,18 +44,20 @@ export default class DraggableImpl extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(prevProps.items.length !== this.props.items.length) {
-            this.setState({
-                items: this.props.items
-            });
-        } 
-        
-        if(prevState.items.length !== this.state.items.length) {
-            this.props.changeItems({details: this.state.items});
-        } 
-        
-        if(prevState.items.filter((item, index) => this.state.items[index].id !== item.id).length>0){
-            this.props.changeItems({details: this.state.items});
+        if (prevProps.items.length !== this.props.items.length) {
+            this.setState({items: this.props.items});
+        }
+
+        if (prevState.items.length !== this.state.items.length) {
+            this
+                .props
+                .changeItems({details: this.state.items});
+        }
+
+        if (prevState.items.filter((item, index) => this.state.items[index].id !== item.id).length > 0) {
+            this
+                .props
+                .changeItems({details: this.state.items});
         }
     }
     onDragEnd = (result) => {
@@ -69,48 +71,55 @@ export default class DraggableImpl extends Component {
     changeItem = (item, index) => {
         const items = this.state.items;
         items[index] = item;
-       
-        this.setState({ items });
+
+        this.setState({items});
     }
 
     deleteItem = (index) => {
         const items = this.state.items;
         items.splice(index, 1)
-        this.setState({
-            items: items
-        });
+        this.setState({items: items});
     }
 
     render() {
         return (
             <div>
-                {
-                    this.state.items.length>0 && (
-                        <DragDropContext onDragEnd={(result) => this.onDragEnd(result)}>
-                            
-                            <Droppable droppableId="droppable">
-                                {(provided, snapshot) => (
-                                    <div ref={provided.innerRef} style={getListStyle(snapshot.isDraggingOver)}>
-                                        {this.state.items.map((item, key) => (
+                {this.state.items.length > 0 && (
+                    <DragDropContext onDragEnd={(result) => this.onDragEnd(result)}>
+
+                        <Droppable droppableId="droppable">
+                            {(provided, snapshot) => (
+                                <div ref={provided.innerRef} style={getListStyle(snapshot.isDraggingOver)}>
+                                    {this
+                                        .state
+                                        .items
+                                        .map((item, key) => (
                                             <Draggable key={key} draggableId={key} index={key}>
                                                 {(provided, snapshot) => (
                                                     <div>
-                                                        <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            {...provided.draggableProps}
+                                                            {...provided.dragHandleProps}
                                                             style={[getItemStyle(snapshot.isDragging, provided.draggableProps.style)]}>
-                                                            <FormItem index={key} item={item} changeItem={(item, key) => this.changeItem(item, key)} deleteItem={(index) => this.deleteItem(index)}/>
+                                                            <FormItem
+                                                                index={key}
+                                                                item={item}
+                                                                changeItem={(item, key) => this.changeItem(item, key)}
+                                                                deleteItem={(index) => this.deleteItem(index)}/>
                                                         </div>
                                                         {provided.placeholder}
                                                     </div>
                                                 )}
                                             </Draggable>
                                         ))}
-                                        {provided.placeholder}
-                                    </div>
-                                )}
-                            </Droppable>
-                        </DragDropContext>
-                    )
-                }
+                                    {provided.placeholder}
+                                </div>
+                            )}
+                        </Droppable>
+                    </DragDropContext>
+                )
+}
             </div>
         );
     }

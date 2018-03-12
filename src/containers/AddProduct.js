@@ -21,22 +21,25 @@ class AddProduct extends Component {
         };
     }
     handleCancle = () => {
-        this.props.history.goBack();
+        this
+            .props
+            .history
+            .goBack();
     };
     handleSave = () => {
-        HTTP.post('/products', querystring.stringify(this.state)).then(response => {
-            console.log('success');
-        });
+        HTTP
+            .post('/products', querystring.stringify(this.state))
+            .then(response => {
+                console.log('success');
+            });
     };
     handleAdd = () => {
         this.setState({
-            details: this.state.details.concat({
-                id: this.state.count,
-                title: '',
-                description: '',
-                imageUrl: ''
-            }),
-            count: this.state.count+1
+            details: this
+                .state
+                .details
+                .concat({id: this.state.count, title: '', description: '', imageUrl: ''}),
+            count: this.state.count + 1
         });
     };
     changeProduct = (product) => {
@@ -52,11 +55,16 @@ class AddProduct extends Component {
                     <FormProduct changeProduct={this.changeProduct}/>
                 </div>
                 <div className="margin-bottom-1">
-                    <DraggableImpl items={this.state.details} changeItems={(items) => this.changeProduct(items)}/>
+                    <DraggableImpl
+                        items={this.state.details}
+                        changeItems={(items) => this.changeProduct(items)}/>
                 </div>
-                <div id="formCard" />
+                <div id="formCard"/>
                 <div className="flexbox margin-bottom-3">
-                    <button id='add-button' className="btn btn-light add-button" onClick={this.handleAdd}>add card</button>
+                    <button
+                        id='add-button'
+                        className="btn btn-light add-button"
+                        onClick={this.handleAdd}>add card</button>
                 </div>
                 <div className="flexbox btnGroup">
                     <button id='cancel' className="btn btn-light" onClick={this.handleCancle}>취소하기</button>
