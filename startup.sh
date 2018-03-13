@@ -3,4 +3,4 @@ if [[ "" !=  "$PID" ]]; then
   echo "killing $PID"
   kill -9 $PID
 fi
-serve -s /home/muzi/lala-profile-web/build
+serve -s /home/ec2-user/targets/lala-profile-web
