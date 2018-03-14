@@ -26,7 +26,7 @@ class FormItem extends Component {
             this
                 .props
                 .changeItem(this.state, this.props.index);
-        } else if (this.props.item.id != this.state.id) {
+        } else if (this.props.item.id !== this.state.id) {
             this.setState({id: this.props.item.id, title: this.props.item.title, description: this.props.item.description, imageUrl: this.props.item.imageUrl});
         }
     }
@@ -51,7 +51,8 @@ class FormItem extends Component {
                     <img
                         className='delete-button'
                         onClick={(e) => this.deleteCard(e)}
-                        src={require('../images/ic_delete_black.png')}/>
+                        src={require('../images/ic_delete_black.png')}
+                        alt='delete button' />
                 </div>
                 <div className='group'>
                     <div className="fieldName">Description Image</div>

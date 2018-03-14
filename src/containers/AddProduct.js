@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './AddProduct.css';
 import HTTP from '../utils/http-common';
 import FormProduct from '../components/FormProduct';
-import FormItem from '../components/FormItem';
 import DraggableImpl from '../components/DraggableImpl';
 import querystring from 'querystring'
 
