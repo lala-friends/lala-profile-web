@@ -32,6 +32,6 @@ jobs:
       # TODO: run tests!
       - run: npm run build  
       - run: scp -oStrictHostKeyChecking=no -r /home/circleci/.ssh/id_rsa ./build ec2-user@ec2-13-125-241-114.ap-northeast-2.compute.amazonaws.com:/home/ec2-user/targets/lala-profile-web/
-      - run: ssh -oStrictHostKeyChecking=no -i /home/circleci/.ssh/id_rsa ec2-user@ec2-13-125-241-114.ap-northeast-2.compute.amazonaws.com serve -s /home/muzi/lala-profile-web/build &
+      - run: ssh -oStrictHostKeyChecking=no -i /home/circleci/.ssh/id_rsa ec2-user@ec2-13-125-241-114.ap-northeast-2.compute.amazonaws.com /home/ec2-user/targets/lala-profile-web/startup.sh
       
 
