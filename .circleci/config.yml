@@ -33,7 +33,9 @@ jobs:
       - run: 
         name: build
         command: npm run build
-        
+
+  
+    steps:    
       - run:
         name: copy project to aws
         command: scp -r -i /home/ubuntu/.ssh/lalafriends ./build ec2-user@ec2-13-125-241-114.ap-northeast-2.compute.amazonaws.com:/home/ec2-user/targets/lala-profile-web/
