@@ -1,0 +1,9 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/build
+    docker:
+      - image: circleci/node:9.4.0
+    steps:
+      - checkout
+      - run: echo "hello world"
