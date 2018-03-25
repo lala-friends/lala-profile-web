@@ -11,7 +11,7 @@ class AddProduct extends Component {
             name: '',
             introduce: '',
             techs: [],
-            repColor: '',
+            color: '',
             imageUrl: '',
             developers: [],
             details: [],
@@ -19,23 +19,18 @@ class AddProduct extends Component {
         };
     }
     handleCancle = () => {
-        this
-            .props
-            .history
-            .goBack();
+        this.props.history.goBack();
     };
     handleSave = () => {
+        console.log(this.state);
         HTTP.post('/products', JSON.stringify(this.state))
-            .then(response => {
-                console.log('success');
+            .then(() => {
+                this.props.history.goBack();
             });
     };
     handleAdd = () => {
         this.setState({
-            details: this
-                .state
-                .details
-                .concat({id: this.state.count, title: '', description: '', imageUrl: ''}),
+            details: this.state.details.concat({id: this.state.count, title: '', description: '', imageUrl: ''}),
             count: this.state.count + 1
         });
     };
@@ -56,7 +51,6 @@ class AddProduct extends Component {
                         items={this.state.details}
                         changeItems={(items) => this.changeProduct(items)}/>
                 </div>
-                <div id="formCard"/>
                 <div className="flexbox margin-bottom-3">
                     <button
                         id='add-button'

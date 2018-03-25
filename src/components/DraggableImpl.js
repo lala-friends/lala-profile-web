@@ -31,7 +31,10 @@ const getListStyle = isDraggingOver => ({
     background: isDraggingOver
         ? "lightblue"
         : "lightgrey",
-    padding: grid,
+    paddingLeft: grid,
+    paddingRight: grid,
+    paddingBottom: grid,
+    paddingTop: '0.01em',
     width: '100%'
 });
 
@@ -106,7 +109,7 @@ export default class DraggableImpl extends Component {
                                                                 index={key}
                                                                 item={item}
                                                                 changeItem={(item, key) => this.changeItem(item, key)}
-                                                                deleteItem={(index) => this.deleteItem(index)}/>
+                                                                deleteItem={(index) => this.deleteItem(index)} />
                                                         </div>
                                                         {provided.placeholder}
                                                     </div>

@@ -17,7 +17,8 @@ class AddDeveloper extends Component {
             color: '#ffa8a8',
             blog: '',
             github: '',
-            facebook: ''
+            facebook: '',
+            products: []
         };
     }
 

@@ -44,3 +44,38 @@
     max-width: 100%;
     height: 100%;
 }
+
+.formProduct .thumbnail {
+    width: 50px;
+    height: 50px;
+    margin-right: 0.5em;
+}
+
+.formProduct .thumbnail img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.formProduct .search-box-wrapper {
+    justify-content: flex-start;
+    border-left: 1px solid #f1f3f5;
+    border-right: 1px solid #f1f3f5;
+    border-bottom: 1px solid #f1f3f5;
+    color: #868e96;
+    padding: 0.5em;
+    cursor: pointer;
+}
+.formProduct .name-card-wrapper {
+    justify-content: flex-start;
+    margin-bottom: 0.5em;
+}
+.formProduct .name-card {
+    justify-content: flex-start;
+    border: 1px solid #f1f3f5;
+    color: #868e96;
+    padding: 0.5em;
+    cursor: pointer;
+    width: 300px;
+    margin-right: 0.5em;
+}
