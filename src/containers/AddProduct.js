@@ -3,7 +3,6 @@ import './AddProduct.css';
 import HTTP from '../utils/http-common';
 import FormProduct from '../components/FormProduct';
 import DraggableImpl from '../components/DraggableImpl';
-import querystring from 'querystring'
 
 class AddProduct extends Component {
     constructor(props) {
@@ -26,8 +25,7 @@ class AddProduct extends Component {
             .goBack();
     };
     handleSave = () => {
-        HTTP
-            .post('/products', querystring.stringify(this.state))
+        HTTP.post('/products', JSON.stringify(this.state))
             .then(response => {
                 console.log('success');
             });
