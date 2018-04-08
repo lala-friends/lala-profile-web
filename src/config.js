@@ -5,4 +5,5 @@ export const firebaseConfig = {
     "storageBucket": process.env.REACT_APP_FIREBASE_STORAGE_BUCKET
 };
 
-export const baseURL = process.env.REACT_APP_BASE_URL; 
+// export const baseURL = process.env.REACT_APP_BASE_URL;
+export const baseURL = "http://13.125.241.114:38001";
