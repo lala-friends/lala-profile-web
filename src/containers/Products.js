@@ -11,6 +11,7 @@ class Products extends Component{
         };
     }
     componentDidMount() {
+        console.log(HTTP);
         HTTP.get('/products').then(response => {
             this.setState({products: response.data});
         });
