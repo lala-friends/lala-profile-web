@@ -21,10 +21,6 @@ class Products extends Component{
     render() {
         return (
             <div className="product">
-                <div className="container">
-                    <button className="btn btn-light add-button" onClick={this.handleClick}>Add Product</button>
-                </div>
-
                 <div className="flexbox container">
                 {
                     this.state.products.map((product, key) =>

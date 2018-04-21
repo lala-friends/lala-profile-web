@@ -62,15 +62,6 @@ class ProductDetail extends Component {
                                 imageUrl={detail.imageUrl} />
                     )
                 }
-                
-                <FormComment/>
-                {
-                    this.state.comments && this.state.comments.map((comment, key) => <Comment key={key}
-                                        email={comment.email}
-                                        comment={comment.message}
-                                        date={comment.regDt}/>
-                    )
-                }
             </div>
         );
     }

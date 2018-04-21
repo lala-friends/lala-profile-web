@@ -1,4 +1,6 @@
 .home {
+    display: flex;
+    flex-flow: wrap;
     height: 100%;
     margin-top: -8em;
 }
@@ -20,11 +22,7 @@
     text-align: left;
 }
 
-.elem1 {
-    padding-top: 15em;
-    padding-bottom: 10em;
-}
-
-.elem2 {
-    background: #e3fafc;
+.home .text-group {
+    margin-top: auto;
+    margin-bottom: auto;
 }

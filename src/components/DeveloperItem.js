@@ -51,10 +51,6 @@ class DeveloperItem extends Component {
                             className="thumbnail"
                             src={this.props.thumbnail}/>
                     </div>
-                    <div className='button-group'>
-                        <button onClick={this.editDeveloper}><img alt='edit 버튼' src={require('../images/ic_edit.png')}/></button>
-                        <button onClick={this.deleteDeveloper}><img alt='delete 버튼' src={require('../images/ic_delete.png')}/></button>
-                    </div>
                 </div>
 
                 <div className="card-body">

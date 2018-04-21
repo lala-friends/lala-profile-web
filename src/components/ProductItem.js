@@ -31,10 +31,6 @@ class ProductItem extends Component {
                         alt='제품 컨셉 이미지'
                         className="thumbnail"
                         src={this.props.imageUrl}/>
-                    <div className='button-group'>
-                        <button onClick={(e) => this.editProduct(e)}><img alt='edit 버튼' src={require('../images/ic_delete.png')}/></button>
-                        <button onClick={(e) => this.deleteProduct(e)}><img alt='delete 버튼' src={require('../images/ic_edit.png')}/></button>
-                    </div>
                 </div>
                 <div className="card-body">
                     <div id='productName' className="text-align-center name">{this.props.name}</div>

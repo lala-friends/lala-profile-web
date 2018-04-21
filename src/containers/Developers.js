@@ -27,9 +27,6 @@ class Developers extends Component {
         return (
             <div className="developers container">
                 <div className='flexbox'>
-                    <button className='btn btn-light add-button' onClick={this.handleClick}>Add Developer</button>
-                </div>
-                <div className='flexbox'>
                     {this.state.developers.map((profile, i) => (
                             <DeveloperItem key={i}
                                 id={profile.personId}
